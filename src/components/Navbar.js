@@ -15,30 +15,42 @@ class Navbar extends React.Component {
                         <Menu.Item
                         name='Home'/>
                     </Link>
+
                     <Link to="/recipes">
                         <Menu.Item
                         name='Recipes'/>
                     </Link>
+
                     <Link to="/myclasses">
                         <Menu.Item
                         name='MyClasses'/>
                     </Link>
+
                     <Link to="/createaclass">
                         <Menu.Item
                         name='Create a Cooking Class'/>
                     </Link>
+
+                    {/* <Link to="/recipes/new">
+                        <Menu.Item
+                        name='Add a Recipe'/>
+                    </Link> */}
+
                     <Link to="/profile">
                         <Menu.Item
                         name='Profile'/>
                     </Link>
+
                     <Link to="/login">
                         <Menu.Item
                         name='Login'/>
                     </Link>
+
                     <Link to="/signup">
                         <Menu.Item
                         name='Sign Up'/>
                     </Link>
+                    
                 </Menu>
             </div>
         )

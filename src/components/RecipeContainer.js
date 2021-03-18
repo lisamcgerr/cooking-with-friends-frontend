@@ -1,5 +1,7 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
+import RecipeForm from './RecipeForm'
+import { Route } from 'react-router-dom';
 
 class RecipeContainer extends React.Component {
 
@@ -26,11 +28,19 @@ class RecipeContainer extends React.Component {
         })
     }
 
+    createRecipe = (newRecipe) => {
+      this.setState({
+        recipes:[newRecipe, ...this.state.recipes]
+      })
+    }
+
     render(){
         return(
             <div>
+                <RecipeForm  createRecipe={this.createRecipe} />
                 <h1>Recipes</h1>
                 {this.renderRecipes()}
+                {/* <Route path="/recipes/new" render={()=><RecipeForm createRecipe={this.createRecipe}/>}/> */}
             </div>
         )
     }
