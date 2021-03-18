@@ -4,6 +4,7 @@ import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
 import Navbar from './Navbar'
+import Dashboard from './Dashboard'
 
 class App extends React.Component {
   render(){
@@ -14,6 +15,7 @@ class App extends React.Component {
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={Login}/>
+            <Route exact path='/profile' component={Dashboard}/>
             <Route path='*'>
                     <h1>404 not found</h1>
             </Route>
