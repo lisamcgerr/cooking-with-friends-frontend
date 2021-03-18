@@ -2,8 +2,9 @@ import React from 'react'
 
 class Login extends React.Component {
     state = {
-        username: 'lisa',
-        password: 'abc'
+        username: 'Julia',
+        password: 'abc',
+        error: ''
     }
 
     handleInput = (e) => { 
@@ -25,10 +26,12 @@ class Login extends React.Component {
 
         fetch('http://localhost:3000/login', reqObj)
         .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            //either user login is successful or fails to log in
-            //update 
+        .then(user => {
+            if (user.error){
+                alert(user.error)
+            } else {
+                //redirect_to 
+            }
         })
     }
 
