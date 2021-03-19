@@ -1,49 +1,47 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
-import RecipeForm from './RecipeForm'
-import { Route } from 'react-router-dom';
+// import RecipeForm from './RecipeForm'
+// import { Route } from 'react-router-dom';
+import { connect } from 'react-redux'
+import {loadRecipes} from '../actions/index'
 
 class RecipeContainer extends React.Component {
-
-    constructor(){
-        super()
-        this.state = {
-          recipes: []
-        }
-      }
-    
-      componentDidMount(){
-        fetch('http://localhost:3000/recipes')
-        .then(resp => resp.json())
-        .then(recipesData => {
-          this.setState({
-            recipes: recipesData
-          })
-        })
-      }
+  componentDidMount(){
+    fetch('http://localhost:3000/recipes')
+    .then(resp => resp.json())
+    .then(recipes => {
+      this.props.loadRecipes(recipes)
+      console.log(recipes)
+    })
+  }
 
     renderRecipes = () => {
-        return this.state.recipes.map(recipeObj => {
-            return <RecipeCard key={recipeObj.id} recipe={recipeObj}  />
-        })
-    }
-
-    createRecipe = (newRecipe) => {
-      this.setState({
-        recipes:[newRecipe, ...this.state.recipes]
-      })
+        return this.props.recipes.map(recipeObj => (
+            <RecipeCard 
+              key={recipeObj.id} 
+              recipe={recipeObj}  
+            />
+        ))
     }
 
     render(){
         return(
             <div>
-                <RecipeForm  createRecipe={this.createRecipe} />
-                <h1>Recipes</h1>
+              <h1>Recipes</h1>
                 {this.renderRecipes()}
-                {/* <Route path="/recipes/new" render={()=><RecipeForm createRecipe={this.createRecipe}/>}/> */}
             </div>
         )
     }
 }
+function mapStateToProps(state){
+  return {
+    recipes: state.recipes
+  }
+}
 
-export default RecipeContainer
+const mapDispatchToProps = {
+  loadRecipes: loadRecipes
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeContainer)
