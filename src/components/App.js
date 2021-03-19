@@ -15,19 +15,11 @@ class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      recipes: []
+      user: []
     }
   }
 
-  componentDidMount(){
-    fetch('http://localhost:3000/recipes')
-    .then(resp => resp.json())
-    .then(recipesData => {
-      this.setState({
-        recipes: recipesData
-      })
-    })
-  }
+   
 
   render(){
     

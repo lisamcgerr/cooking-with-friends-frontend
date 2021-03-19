@@ -69,7 +69,7 @@ class RecipeForm extends React.Component {
 
                     <Form.Field>
                         <label>Recipe Link: </label>
-                        <input name='recipe_link' type= 'text' value={this.state.recipe_link} onChange={this.handleChange} placeholder='recipe link' />
+                        <input name='recipe_link' type= 'url' value={this.state.recipe_link} onChange={this.handleChange} placeholder='recipe link' />
                     </Form.Field>
 
                     <Form.Field>
