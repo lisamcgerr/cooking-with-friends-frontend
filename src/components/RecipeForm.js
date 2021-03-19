@@ -1,16 +1,15 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { addRecipe } from '../actions/index'
 
 class RecipeForm extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            name: '',
-            description: '',
-            prep_time: '',
-            recipe_link: '',
-            image: ''
-        }
+   state = {
+        name: '',
+        description: '',
+        prep_time: '',
+        recipe_link: '',
+        image: ''
     }
 
     handleChange = (e) => {
@@ -36,14 +35,8 @@ class RecipeForm extends React.Component {
         fetch('http://localhost:3000/recipes', reqObj)
         .then(resp => resp.json())
         .then(newRecipe => {
-          this.props.createRecipe(newRecipe)
-          this.setState({
-            name: '',
-            description: '',
-            prep_time: '',
-            recipe_link: '',
-            image: ''
-          })
+          this.props.addRecipe(newRecipe)
+          this.props.history.push('/recipes')
         })
     }
 
@@ -83,4 +76,8 @@ class RecipeForm extends React.Component {
     }
 }
 
-export default RecipeForm
+const mapDispatchToProps = {
+    addRecipe: addRecipe
+}
+
+export default connect(null, mapDispatchToProps)(RecipeForm)
