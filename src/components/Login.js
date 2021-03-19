@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { loginSuccess } from '../actions/index'
 
 class Login extends React.Component {
     state = {
@@ -31,12 +33,18 @@ class Login extends React.Component {
             if (user.error){
                 alert(user.error)
             } else {
-                //redirect_to 
+                this.props.loginSuccess(user)
+                this.setState({
+                    username: 'Julia',
+                    password: 'abc',
+                    error: ''})
+                this.props.history.push('/profile')
             }
         })
     }
 
     render(){
+        console.log(this.props, '---')
         return(
             <div>
                 <h3>Sign In</h3>
@@ -57,5 +65,8 @@ class Login extends React.Component {
     }
 }
 
+const mapDispatchToProps = {
+    loginSuccess: loginSuccess
+}
 
-export default Login
+export default connect(null, mapDispatchToProps) (Login)

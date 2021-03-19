@@ -1,4 +1,4 @@
-import {LOAD_RECIPES, ADD_RECIPE} from './actionTypes'
+import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS} from './actionTypes'
 
 export function loadRecipes(recipes){
     return{
@@ -11,6 +11,13 @@ export function addRecipe(recipe){
     return {
         type: ADD_RECIPE,
         recipe: recipe
+    }
+}
+
+export function loginSuccess(user){
+    return {
+        type: LOGIN_SUCCESS,
+        user: user
     }
 }
 
