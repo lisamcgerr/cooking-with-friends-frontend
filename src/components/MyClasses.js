@@ -1,13 +1,13 @@
 import React from 'react'
 
-class MyClasses extends React.Component {
+class MyClassesCard extends React.Component {
     render(){
         return(
             <div>
-
+                
             </div>
         )
     }
 }
 
-export default MyClasses
+export default MyClassesCard

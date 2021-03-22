@@ -6,7 +6,7 @@ import Signup from './Signup'
 import Navbar from './Navbar'
 import Dashboard from './Dashboard'
 import RecipeContainer from './RecipeContainer'
-import MyClasses from './MyClasses'
+import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
 import 'semantic-ui-css/semantic.min.css'
 
@@ -28,7 +28,7 @@ class App extends React.Component {
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/profile' component={Dashboard}/>
-            <Route exact path='/myclasses' component={MyClasses}/>
+            <Route exact path='/myclasses' component={MyClassesContainer}/>
             <Route exact path='/' component={Home}/>
             <Route exact path='/recipes/new' component={RecipeForm}/>
           </Switch>
