@@ -1,6 +1,13 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class Dashboard extends React.Component {
+    componentDidMount(){
+        if (!this.props.auth){
+            this.props.history.push('/login')
+        }
+    }
+
     render(){
         return(
             <div>
@@ -10,4 +17,10 @@ class Dashboard extends React.Component {
     }
 }
 
-export default Dashboard
+function mapStateToProps(state){
+    return{
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard)

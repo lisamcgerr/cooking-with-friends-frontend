@@ -31,7 +31,9 @@ class Login extends React.Component {
         .then(resp => resp.json())
         .then(user => {
             if (user.error){
-                alert(user.error)
+                this.setState({
+                    error: user.error
+                })
             } else {
                 this.props.loginSuccess(user)
                 this.setState({
@@ -44,10 +46,11 @@ class Login extends React.Component {
     }
 
     render(){
-        console.log(this.props, '---')
+        //console.log(this.props, '---')
         return(
             <div>
                 <h3>Sign In</h3>
+                {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
                     <form onSubmit={this.handleSubmit} >
                         <Form.Field>
                         <label>Username: </label>
@@ -66,7 +69,8 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = {
+    //key to access : action creator
     loginSuccess: loginSuccess
 }
 
-export default connect(null, mapDispatchToProps) (Login)
+export default connect(null, mapDispatchToProps)(Login)

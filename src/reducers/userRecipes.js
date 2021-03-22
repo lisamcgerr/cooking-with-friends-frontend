@@ -1,14 +1,14 @@
 import { LOGIN_SUCCESS } from '../actions/actionTypes'
 
-function cookingSessionsReducer(state = null, action) 
+function userRecipesReducer(state = [], action) 
 {
     switch(action.type) {
         case LOGIN_SUCCESS:
-            return action.user.cooking_sessions
+            return action.user.recipes
         default:
             return state
 
     }
 }
 
-export default cookingSessionsReducer
+export default userRecipesReducer
