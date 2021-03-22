@@ -29,13 +29,15 @@ class Login extends React.Component {
 
         fetch('http://localhost:3000/login', reqObj)
         .then(resp => resp.json())
-        .then(user => {
-            if (user.error){
+        .then(data => {
+            console.log('data', data)
+            if (data.error){
                 this.setState({
-                    error: user.error
+                    error: data.error
                 })
             } else {
-                this.props.loginSuccess(user)
+                this.props.loginSuccess(data.user)
+                localStorage.setItem('myAppToken', data.token)
                 this.setState({
                     username: 'Julia',
                     password: 'abc',

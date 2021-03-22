@@ -16,7 +16,7 @@ class RecipeForm extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        console.log('state', e.target.value)
+        //console.log('state', e.target.value)
     }
 
     handleSubmit = (e) => {

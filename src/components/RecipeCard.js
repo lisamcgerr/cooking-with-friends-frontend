@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Card } from 'semantic-ui-react'
 
 class RecipeCard extends React.Component {
@@ -14,5 +15,10 @@ class RecipeCard extends React.Component {
         )
     }
 }
+function mapStateToProps(state){
+    return {
+        user_recipes: state.user_recipes
+    }
+}
 
-export default RecipeCard
+export default connect(mapStateToProps, null)(RecipeCard)

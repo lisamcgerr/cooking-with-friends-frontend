@@ -9,10 +9,39 @@ import RecipeContainer from './RecipeContainer'
 import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
 import 'semantic-ui-css/semantic.min.css'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { currentUser } from '../actions/index'
+
+
 
 
 class App extends React.Component {
 
+  componentDidMount(){
+    const token = localStorage.getItem('myAppToken')
+    
+    if (!token){
+        this.props.history.push('/login')
+    } else {
+
+      const reqObj = {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }      
+      fetch('http://localhost:3000/profile', reqObj)
+      .then(resp => resp.json())
+      .then(data => {
+        if(data.error){
+          this.props.history.push('/login')
+        } else { 
+          this.props.currentUser(data)
+        }
+      })
+    }
+}
 
    
 
@@ -37,4 +66,8 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapDispatchToProps = {
+  currentUser: currentUser
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(App))

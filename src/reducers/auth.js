@@ -1,9 +1,10 @@
-import { LOGIN_SUCCESS } from '../actions/actionTypes'
+import { LOGIN_SUCCESS, CURRENT_USER } from '../actions/actionTypes'
 
 function authReducer(state = null, action) 
 {
     switch(action.type) {
         case LOGIN_SUCCESS:
+        case CURRENT_USER:   
             return {
                 id: action.user.id,
                 username: action.user.username,

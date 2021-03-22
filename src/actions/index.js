@@ -1,4 +1,4 @@
-import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS} from './actionTypes'
+import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS, CURRENT_USER } from './actionTypes'
 
 export function loadRecipes(recipes){
     return{
@@ -21,5 +21,11 @@ export function loginSuccess(user){
     }
 }
 
+export function currentUser(user){
+    return {
+        type: CURRENT_USER,
+        user: user
+    }
+}
 
 
