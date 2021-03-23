@@ -11,7 +11,8 @@ import RecipeForm from './RecipeForm'
 import 'semantic-ui-css/semantic.min.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { currentUser } from '../actions/index'
+import { currentUser, loadUsers } from '../actions/index'
+import ClassForm from './ClassForm';
 
 
 
@@ -19,6 +20,12 @@ import { currentUser } from '../actions/index'
 class App extends React.Component {
 
   componentDidMount(){
+
+    fetch('http://localhost:3000/users')
+    .then(resp => resp.json())
+    .then(data =>
+      this.props.loadUsers(data))
+
     const token = localStorage.getItem('myAppToken')
     
     if (!token){
@@ -42,7 +49,6 @@ class App extends React.Component {
       })
     }
 }
-
    
 
   render(){
@@ -53,7 +59,8 @@ class App extends React.Component {
         
         {/* <RecipeContainer recipes={this.state.recipes}/> */}
           <Switch>
-            <Route exact path="/recipes" component={RecipeContainer} />
+            <Route exact path='/createaclass' component={ClassForm} />
+            <Route exact path='/recipes' component={RecipeContainer} />
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/profile' component={Dashboard}/>
@@ -67,7 +74,8 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = {
-  currentUser: currentUser
+  currentUser: currentUser,
+  loadUsers: loadUsers
 }
 
 export default connect(null, mapDispatchToProps)(withRouter(App))

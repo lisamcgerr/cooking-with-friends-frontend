@@ -22,7 +22,7 @@ class RecipeForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        const newRecipe = {...this.state}
+        const newRecipe = {...this.state, likes: 0}
 
         const reqObj = {
             method: 'POST',

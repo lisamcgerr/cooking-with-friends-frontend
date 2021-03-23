@@ -11,7 +11,7 @@ class RecipeContainer extends React.Component {
     .then(resp => resp.json())
     .then(recipes => {
       this.props.loadRecipes(recipes)
-      console.log(recipes)
+      //console.log(recipes)
     })
   }
 
