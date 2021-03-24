@@ -56,6 +56,8 @@ handleLikes = (e) => {
                         <Icon name='user' />
                         {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
                     </a>
+                    <br></br>
+                    <button> Create a Cooking Class </button>
                     </Card.Content>
                 
                 </Card>

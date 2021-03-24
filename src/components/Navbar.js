@@ -33,7 +33,7 @@ class Navbar extends React.Component {
 
                     <Link to="/myclasses">
                         <Menu.Item
-                        name='MyClasses'/>
+                        name='My Cooking Classes'/>
                     </Link>
 
                     <Link to="/createaclass">

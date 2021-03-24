@@ -7,6 +7,7 @@ class Dashboard extends React.Component {
         return(
             <div>
                 <h1>This is the Dashboard page</h1>
+                
             </div>
         )
     }

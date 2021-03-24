@@ -9,34 +9,16 @@ class MyClassesContainer extends React.Component {
             <MyClassesCard
                 key={cookingSessionObj.id}
                 cookingSession={cookingSessionObj}
-                // csTitle={cookingSessionObj.title}
-                // csDate={cookingSessionObj.date}
-                // csMeetingLink={cookingSessionObj.meeting_link}
-                // csRecipeId={cookingSessionObj.recipe_id}
             />
         ))
     }
 
-    // renderMyRecipes = () => {
-    //     return this.props.user_recipes.map(userRecipeObj => (
-    //         <MyClassesCard
-    //             key={userRecipeObj.id}
-    //             userRecipeId={userRecipeObj.id}
-    //             userRecipeName={userRecipeObj.name}
-    //             userRecipePrepTime={userRecipeObj.prep_time}
-    //             userRecipeImage={userRecipeObj.image}
-    //             userRecipeLink={userRecipeObj.recipe_link}
-    //             userRecipeDescription={userRecipeObj.description}
-    //         />
-    //     ))
-    // }
 
     render(){
         return(
             <div>
                 <h1>My Cooking Sessions</h1>
                     {this.renderMyClasses()}
-                    {/* {this.renderMyRecipes()} */}
             </div>
         )
     }
