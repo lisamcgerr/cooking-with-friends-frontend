@@ -23,7 +23,7 @@ class MyClassesCard extends React.Component {
             <Card.Content extra>
               <a>
                 <Icon name='user' />
-                <a href={this.props.cookingSession.meeting_Link} target='blank'><strong>Click here to get your meeting started</strong></a>
+                {/* <a href={this.props.cookingSession.meeting_Link} target='blank'><strong>Click here to get your meeting started</strong></a> */}
               </a>
             </Card.Content>
           </Card>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Form } from 'semantic-ui-react'
+//import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
 
@@ -51,20 +52,35 @@ class Login extends React.Component {
         //console.log(this.props, '---')
         return(
             <div>
-                <h3>Sign In</h3>
                 {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
-                    <form onSubmit={this.handleSubmit} >
-                        <Form.Field>
-                        <label>Username: </label>
-                        <input name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />
-                        </Form.Field>
-                        <Form.Field>
-                        <label>Password: </label>
-                        <input name={'password'} onChange={this.handleInput} value={this.state.password} placeholder='Password' />
-                        </Form.Field>
-                        <Button type='submit'>Submit</Button>
-                    </form>
+                      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                        <Grid.Column style={{ maxWidth: 450 }}>
+                        <Header as='h2' color='teal' textAlign='center'>
+                        Log-in to your account
+                        </Header>
+                        <Form onSubmit={this.handleSubmit} size='large'>
+                            <Segment stacked>
+                            <Form.Input fluid icon='user' name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />
+                            <Form.Input
+                                fluid
+                                icon='lock'
+                                iconPosition='left'
+                                name={'password'} 
+                                onChange={this.handleInput} 
+                                value={this.state.password} 
+                                placeholder='Password'
+                            />
 
+                            <Button color='teal' fluid size='large'>
+                                Login
+                            </Button>
+                            </Segment>
+                        </Form>
+                        <Message>
+                            New to us? <a href='http://localhost:3001/signup'>Sign Up</a>
+                        </Message>
+                        </Grid.Column>
+                    </Grid>
             </div>
         )
     }
