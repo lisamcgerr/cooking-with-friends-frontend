@@ -8,7 +8,7 @@ export const CURRENT_USER = 'CURRENT_USER'
 export const ADD_USER  = 'ADD_USER'
 export const LOAD_USERS = 'LOAD_USERS'
 
-export const ADD_SESSION  = 'ADD_SESSION'
+export const CREATE_USER_SESSION  = 'CREATE_USER_SESSION'
 export const LOAD_SESSIONS = 'LOAD_SESSIONS'
 
 

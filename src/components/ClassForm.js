@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { createCookingSession } from '../actions'
+import { createCookingSession, createUserSession } from '../actions'
 
 class ClassForm extends React.Component {
     state = {
         title: '',
         date: '',
         meeting_link: '',
-        recipe_id: ''
+        recipe_id: '',
         // host_id: this.props.auth.id
     }
 
@@ -16,6 +16,13 @@ class ClassForm extends React.Component {
         //console.log( 'handle change data', e.target.value)
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+
+    handleChangeSession =  (e) => {
+        //console.log( 'handle change data', e.target.value)
+        this.setState({
+            user_id: e.target.value
         })
     }
 
@@ -46,21 +53,32 @@ class ClassForm extends React.Component {
         fetch('http://localhost:3000/cooking_sessions', reqObj)
         .then(resp => resp.json())
         .then(newCookingSession => {
-            //console.log('data', newCookingSession)
+            console.log('data', newCookingSession)
             //debugger
           this.props.createCookingSession(newCookingSession)
-          console.log('created session', newCookingSession)
-          //this.props.history.push('/myclasses')
+         
+// ----------------------------second fetch request--------------------------------
+        const cookingSessionId = newCookingSession.id
+        const newUserSession = {user_id: id, cooking_session_id: cookingSessionId}
+
+        const reqObjSess = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body:  JSON.stringify(newUserSession)
+        }
+
+          fetch('http://localhost:3000/users_sessions', reqObjSess)
+          .then(resp => resp.json())
+          .then(newUserSession => {
+              console.log(newUserSession, 'datatatatat')
+              this.props.createUserSession(newUserSession)
+                //this.props.history.push('/myclasses')
+          })
         })
     }
 
-
-    handleChangeRecipe = (e) => {
-        console.log( 'recipe data', e.target.value)
-        this.setState({
-            recipe_id: e.target.value
-        })
-    }
 
     render(){
         return(
@@ -91,6 +109,15 @@ class ClassForm extends React.Component {
                         <input name='meeting_link' type= 'url' value={this.state.meeting_link} onChange={this.handleChange} placeholder='meeting link' />
                     </Form.Field>
 
+                    {/* <Form.Field>
+                        <label>Users: </label>
+                        <select name='user_id' value={this.state.user_id} onChange={this.handleChangeSession}>
+                            {this.props.users.map((user) => {
+                             return <option value={user.id}>{user.username}</option>;
+                             })}
+                        </select>
+                    </Form.Field> */}
+
                     <Button type='submit'>Submit</Button>
                 </form>
 
@@ -102,12 +129,14 @@ class ClassForm extends React.Component {
 function mapStateToProps(state){
     return{
         recipes: state.recipes,
-        auth: state.auth
+        auth: state.auth,
+        users: state.users
     }
 }
 
 const mapDispatchToProps = {
-    createCookingSession: createCookingSession
+    createCookingSession: createCookingSession,
+    createUserSession: createUserSession
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClassForm)
