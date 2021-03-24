@@ -1,4 +1,4 @@
-import { LOAD_RECIPES, ADD_RECIPE, LIKE_RECIPE } from '../actions/actionTypes'
+import { ADD_RECIPE, LIKE_RECIPE, LOAD_RECIPES } from '../actions/actionTypes'
 
 function recipesReducer(state = [], action) 
 {

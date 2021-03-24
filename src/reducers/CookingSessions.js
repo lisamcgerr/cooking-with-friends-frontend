@@ -1,13 +1,12 @@
-import { LOGIN_SUCCESS, CURRENT_USER, CREATE_COOKING_SESSION } from '../actions/actionTypes'
+import { LOAD_COOKING_SESSIONS, CREATE_COOKING_SESSION } from '../actions/actionTypes'
 
 function cookingSessionsReducer(state = null, action) 
 {
     switch(action.type) {
-        case LOGIN_SUCCESS:
-        case CURRENT_USER:   
-            return action.user.cooking_sessions
+        case LOAD_COOKING_SESSIONS:
+            return action.cooking_sessions
         case CREATE_COOKING_SESSION:   
-            return [action.cooking_session, ...state]
+            return [action.cooking_sessions, ...state]
         default:
             return state
 

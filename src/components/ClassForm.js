@@ -13,14 +13,14 @@ class ClassForm extends React.Component {
     }
 
     handleChange = (e) => {
-        console.log( 'handle change data', e.target.value)
+        //console.log( 'handle change data', e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
     handleChangeRecipe = (e) => {
-        console.log( 'recipe data', e.target.value)
+        //console.log( 'recipe data', e.target.value)
         this.setState({
             recipe_id: e.target.value
         })
@@ -50,7 +50,7 @@ class ClassForm extends React.Component {
             //debugger
           this.props.createCookingSession(newCookingSession)
           console.log('created session', newCookingSession)
-          this.props.history.push('/myclasses')
+          //this.props.history.push('/myclasses')
         })
     }
 
@@ -61,8 +61,6 @@ class ClassForm extends React.Component {
             recipe_id: e.target.value
         })
     }
-
-
 
     render(){
         return(

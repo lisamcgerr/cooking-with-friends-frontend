@@ -3,17 +3,9 @@ import RecipeCard from './RecipeCard'
 // import RecipeForm from './RecipeForm'
 // import { Route } from 'react-router-dom';
 import { connect } from 'react-redux'
-import {loadRecipes} from '../actions/index'
+
 
 class RecipeContainer extends React.Component {
-  componentDidMount(){
-    fetch('http://localhost:3000/recipes')
-    .then(resp => resp.json())
-    .then(recipes => {
-      this.props.loadRecipes(recipes)
-      //console.log(recipes)
-    })
-  }
 
     renderRecipes = () => {
         return this.props.recipes.map(recipeObj => (
@@ -39,9 +31,6 @@ function mapStateToProps(state){
   }
 }
 
-const mapDispatchToProps = {
-  loadRecipes: loadRecipes
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeContainer)
+export default connect(mapStateToProps, null)(RecipeContainer)

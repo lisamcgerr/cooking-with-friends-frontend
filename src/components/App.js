@@ -11,7 +11,7 @@ import RecipeForm from './RecipeForm'
 import 'semantic-ui-css/semantic.min.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { currentUser, loadUsers } from '../actions/index'
+import { currentUser, loadCookingSessions, loadRecipes, loadSessions, loadUsers } from '../actions/index'
 import ClassForm from './ClassForm'
 import About from './About'
 
@@ -49,6 +49,24 @@ class App extends React.Component {
         }
       })
     }
+
+    fetch('http://localhost:3000/recipes')
+    .then(resp => resp.json())
+    .then(recipes => {
+      this.props.loadRecipes(recipes)
+    })
+
+    fetch('http://localhost:3000/cooking_sessions')
+    .then(resp => resp.json())
+    .then(cooking_sessions => {
+      this.props.loadCookingSessions(cooking_sessions)
+    })
+
+    fetch('http://localhost:3000/user_sessions')
+    .then(resp => resp.json())
+    .then(user_sessions => {
+      this.props.loadSessions(user_sessions)
+    })
 }
    
 
@@ -77,7 +95,10 @@ class App extends React.Component {
 
 const mapDispatchToProps = {
   currentUser: currentUser,
-  loadUsers: loadUsers
+  loadUsers: loadUsers,
+  loadRecipes: loadRecipes,
+  loadCookingSessions: loadCookingSessions,
+  loadSessions: loadSessions
 }
 
 export default connect(null, mapDispatchToProps)(withRouter(App))

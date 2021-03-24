@@ -5,7 +5,7 @@ import MyClassesCard from './MyClasses'
 class MyClassesContainer extends React.Component {
 
     renderMyClasses = () => {
-        return this.props.cooking_sessions.map(cookingSessionObj => (
+        return this.props.user_cooking_sessions.map(cookingSessionObj => (
             <MyClassesCard
                 key={cookingSessionObj.id}
                 cookingSession={cookingSessionObj}
@@ -26,7 +26,7 @@ class MyClassesContainer extends React.Component {
 
 function mapStateToProps(state){
     return {
-        cooking_sessions: state.cooking_sessions
+        user_cooking_sessions: state.user_cooking_sessions
     }
 }
 

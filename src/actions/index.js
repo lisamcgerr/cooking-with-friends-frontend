@@ -1,9 +1,23 @@
-import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS, CURRENT_USER, ADD_USER, LOAD_USERS, CREATE_COOKING_SESSION, LIKE_RECIPE } from './actionTypes'
+import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS, CURRENT_USER, ADD_USER, LOAD_USERS, CREATE_COOKING_SESSION, LIKE_RECIPE, LOAD_COOKING_SESSIONS, LOAD_SESSIONS, ADD_SESSION } from './actionTypes'
 
 export function loadRecipes(recipes){
     return{
         type: LOAD_RECIPES,
         recipes: recipes
+    }
+}
+
+export function loadCookingSessions(cooking_sessions){
+    return{
+        type: LOAD_COOKING_SESSIONS,
+        cooking_sessions: cooking_sessions
+    }
+}
+
+export function loadSessions(user_sessions){
+    return{
+        type: LOAD_SESSIONS,
+        user_sessions: user_sessions
     }
 }
 
