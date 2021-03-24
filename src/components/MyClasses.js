@@ -1,16 +1,30 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 class MyClassesCard extends React.Component {
+
+//this.props.recipes.map(recipe => recipe.id === this.props.cookingSession.recipe_id)
+
     render(){
         return(
-            <Card
-            // image={this.props.}
-            header={this.props.csTitle}
-            meta={this.props.csDate}
-            description={this.props.csMeetingLink}
-            // extra={this.props.recipe.recipe_link}
-          />
+            <Card>
+            <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
+            <Card.Content>
+              <Card.Header>{this.props.cookingSession.title}</Card.Header>
+              <Card.Meta>
+                <span className='date'>{this.props.cookingSession.date}</span>
+              </Card.Meta>
+              <Card.Description>
+              {this.props.cookingSession.meeting_link}
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <a>
+                <Icon name='user' />
+                {this.props.cookingSession.meeting_link}
+              </a>
+            </Card.Content>
+          </Card>
         )
     }
 }

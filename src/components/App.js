@@ -12,7 +12,8 @@ import 'semantic-ui-css/semantic.min.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { currentUser, loadUsers } from '../actions/index'
-import ClassForm from './ClassForm';
+import ClassForm from './ClassForm'
+import About from './About'
 
 
 
@@ -61,6 +62,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/createaclass' component={ClassForm} />
             <Route exact path='/recipes' component={RecipeContainer} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/profile' component={Dashboard}/>

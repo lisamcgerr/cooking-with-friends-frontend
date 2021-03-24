@@ -8,10 +8,11 @@ class MyClassesContainer extends React.Component {
         return this.props.cooking_sessions.map(cookingSessionObj => (
             <MyClassesCard
                 key={cookingSessionObj.id}
-                csTitle={cookingSessionObj.title}
-                csDate={cookingSessionObj.date}
-                csMeetingLink={cookingSessionObj.meeting_link}
-                csRecipeId={cookingSessionObj.recipe_id}
+                cookingSession={cookingSessionObj}
+                // csTitle={cookingSessionObj.title}
+                // csDate={cookingSessionObj.date}
+                // csMeetingLink={cookingSessionObj.meeting_link}
+                // csRecipeId={cookingSessionObj.recipe_id}
             />
         ))
     }

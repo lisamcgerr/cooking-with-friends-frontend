@@ -8,15 +8,13 @@ import { addUser } from '../actions/index'
 class Signup extends React.Component {
 
     state = {
-        first_name: 'sam',
-        last_name: 'olanipekun',
-        username: 'samooo',
-        password: 'abc',
-        //password_confirmation: '',
-        email: 'sam@gmail.com',
-        bio: 'bio'
+        first_name: '',
+        last_name: '',
+        username: '',
+        password: '',
+        email: '',
+        bio: ''
     }
-
 
     
     handleChange = (e) => {
@@ -34,16 +32,18 @@ class Signup extends React.Component {
         const reqObj = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
             },
             body:  JSON.stringify(newUser)
         }
-
+        //debugger
         fetch('http://localhost:3000/users', reqObj)
         .then(resp => resp.json())
-        .then(newUser => {
-            console.log('data', newUser)
-          this.props.addUser(newUser)
+        .then(data => {
+            //debugger
+            console.log('data', data)
+          this.props.addUser(data)
           this.props.history.push('/login')
         })
     }
@@ -84,11 +84,6 @@ class Signup extends React.Component {
                         onChange={this.handleChange}  
                         placeholder='password' />
                     </Form.Field>
-
-                    {/* <Form.Field>
-                        <label>Confirm Password: </label>
-                        <input name='password_confirmation' type= 'password' value={this.state.password_confirmation} onChange={this.handleChange}  placeholder='confirm password' />
-                    </Form.Field> */}
 
                     <Form.Field>
                         <label>Email: </label>
