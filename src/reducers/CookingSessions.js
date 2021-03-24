@@ -6,7 +6,7 @@ function cookingSessionsReducer(state = null, action)
         case LOAD_COOKING_SESSIONS:
             return action.cooking_sessions
         case CREATE_COOKING_SESSION:   
-            return [action.cooking_sessions, ...state]
+            return [action.cooking_session, ...state]
         default:
             return state
 

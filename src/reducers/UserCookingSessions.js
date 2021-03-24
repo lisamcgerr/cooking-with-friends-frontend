@@ -6,8 +6,8 @@ function userCookingSessionsReducer(state = null, action)
         case LOGIN_SUCCESS:
         case CURRENT_USER:   
             return action.user.cooking_sessions
-        case CREATE_COOKING_SESSION:   
-            return [action.user.cooking_sessions, ...state]
+        // case CREATE_COOKING_SESSION:   
+        //     return [action.user.cooking_sessions, ...state]
         default:
             return state
 

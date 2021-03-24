@@ -40,7 +40,7 @@ class ClassForm extends React.Component {
             headers: {
               'Content-Type': 'application/json'
             },
-            body:  JSON.stringify({cooking_session: newCookingSession})
+            body:  JSON.stringify(newCookingSession)
         }
 
         fetch('http://localhost:3000/cooking_sessions', reqObj)

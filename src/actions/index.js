@@ -56,10 +56,10 @@ export function loadUsers(users){
     }
 }
 
-export function createCookingSession(cooking_sessions){
+export function createCookingSession(cooking_session){
     return{
         type: CREATE_COOKING_SESSION,
-        cooking_sessions: cooking_sessions
+        cooking_session: cooking_session
     }
 }
 
