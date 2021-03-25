@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import { currentUser, loadCookingSessions, loadRecipes, loadSessions, loadUsers } from '../actions/index'
 import ClassForm from './ClassForm'
 import About from './About'
+import AllClasses from './AllClasses'
 
 
 
@@ -87,6 +88,7 @@ class App extends React.Component {
             <Route exact path='/myclasses' component={MyClassesContainer}/>
             <Route exact path='/' component={Home}/>
             <Route exact path='/recipes/new' component={RecipeForm}/>
+            <Route exact path='/allclasses' component={AllClasses}/>
           </Switch>
       </div>
     )

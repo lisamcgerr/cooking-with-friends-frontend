@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
+import AllClasses from './AllClasses'
+
 
 
 
@@ -34,6 +36,11 @@ class Navbar extends React.Component {
                     <Link to="/myclasses">
                         <Menu.Item
                         name='My Cooking Classes'/>
+                    </Link>
+
+                    <Link to="/allclasses">
+                        <Menu.Item
+                        name='All Cooking Classes'/>
                     </Link>
 
                     <Link to="/createaclass">

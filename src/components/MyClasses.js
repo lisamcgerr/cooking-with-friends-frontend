@@ -4,13 +4,11 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 
 class MyClassesCard extends React.Component {
 
-//{this.props.recipes.map(recipe => recipe.id === this.props.cookingSession.recipe_id) ? recipe.image : null }
+  //this.props.recipes.filter(recipe => recipe.id === this.props.cookingSession.recipe_id)? <Image  wrapped ui={false} src={this.props.cookingSession.recipe.image} /> : null
 
     render(){
         return(
             <Card>
-            {/* <Image src={this.props.recipes.map(recipe => recipe.id === this.props.cookingSession.recipe_id) ? recipe.image : null }
- wrapped ui={false} /> */}
             <Card.Content>
               <Card.Header>{this.props.cookingSession.title}</Card.Header>
               <Card.Meta>
@@ -33,10 +31,11 @@ class MyClassesCard extends React.Component {
 
 function mapStateToProps(state){
     return{
-        recipes: state.recipes
+        recipes: state.recipes,
+        cooking_sessions: state.cooking_sessions
     }
 }
 
-export default connect(mapStateToProps) (MyClassesCard)
+export default connect(mapStateToProps, null)(MyClassesCard)
 
 //this.props.recipes.filter(recipe => recipe.id === this.props.csRecipeId)? {this.props}

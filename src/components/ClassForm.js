@@ -9,25 +9,22 @@ class ClassForm extends React.Component {
         date: '',
         meeting_link: '',
         recipe_id: '',
-        // host_id: this.props.auth.id
+       
     }
 
     handleChange = (e) => {
-        //console.log( 'handle change data', e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
     handleChangeSession =  (e) => {
-        //console.log( 'handle change data', e.target.value)
         this.setState({
             user_id: e.target.value
         })
     }
 
     handleChangeRecipe = (e) => {
-        //console.log( 'recipe data', e.target.value)
         this.setState({
             recipe_id: e.target.value
         })
@@ -36,10 +33,7 @@ class ClassForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-
         const id = this.props.auth.id
-        //console.log('id', this.props.auth.id)
-
         const newCookingSession = {...this.state, host_id: id}
 
         const reqObj = {
@@ -53,31 +47,29 @@ class ClassForm extends React.Component {
         fetch('http://localhost:3000/cooking_sessions', reqObj)
         .then(resp => resp.json())
         .then(newCookingSession => {
-            console.log('data', newCookingSession)
+            console.log('data new cooking session', newCookingSession)
             //debugger
-          this.props.createCookingSession(newCookingSession)
+            this.props.createCookingSession(newCookingSession)
          
-// ----------------------------second fetch request--------------------------------
-        const cookingSessionId = newCookingSession.id
-        const newUserSession = {user_id: id, cooking_session_id: cookingSessionId}
+            // const cookingSessionId = newCookingSession.id
+            // const newUserSession = {user_id: id, cooking_session_id: cookingSessionId}
+            // console.log(newUserSession, 'data new User Session')
+            // //debugger
+            // this.props.createUserSession(newUserSession)
 
-        const reqObjSess = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body:  JSON.stringify(newUserSession)
-        }
-
-          fetch('http://localhost:3000/users_sessions', reqObjSess)
-          .then(resp => resp.json())
-          .then(newUserSession => {
-              console.log(newUserSession, 'datatatatat')
-              this.props.createUserSession(newUserSession)
-                //this.props.history.push('/myclasses')
-          })
         })
     }
+
+    // componentDidUpdate(prevState, prevProps){
+    //     // if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
+    //     //     console.log('prevState', prevState.cooking_sessions)
+    //     //     console.log('prevProps', prevProps.title)
+
+    //     // } else {
+    //     //     console.log('no')
+    //     // }
+    //     //const session = this.props.cooking_sessions.filter(cookingSessionObj => cookingSessionObj.title === prevProps.title)
+    // }
 
 
     render(){
@@ -109,15 +101,6 @@ class ClassForm extends React.Component {
                         <input name='meeting_link' type= 'url' value={this.state.meeting_link} onChange={this.handleChange} placeholder='meeting link' />
                     </Form.Field>
 
-                    {/* <Form.Field>
-                        <label>Users: </label>
-                        <select name='user_id' value={this.state.user_id} onChange={this.handleChangeSession}>
-                            {this.props.users.map((user) => {
-                             return <option value={user.id}>{user.username}</option>;
-                             })}
-                        </select>
-                    </Form.Field> */}
-
                     <Button type='submit'>Submit</Button>
                 </form>
 
@@ -130,7 +113,8 @@ function mapStateToProps(state){
     return{
         recipes: state.recipes,
         auth: state.auth,
-        users: state.users
+        users: state.users,
+        cooking_sessions: state.cooking_sessions
     }
 }
 

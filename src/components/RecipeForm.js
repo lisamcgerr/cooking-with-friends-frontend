@@ -31,10 +31,12 @@ class RecipeForm extends React.Component {
             },
             body:  JSON.stringify(newRecipe)
         }
-
+        //debugger
         fetch('http://localhost:3000/recipes', reqObj)
         .then(resp => resp.json())
         .then(newRecipe => {
+            //debugger
+            console.log('step', newRecipe)
           this.props.addRecipe(newRecipe)
           this.props.history.push('/recipes')
         })

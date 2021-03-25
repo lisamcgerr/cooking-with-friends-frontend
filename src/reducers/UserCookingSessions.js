@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, CURRENT_USER, CREATE_COOKING_SESSION } from '../actions/actionTypes'
+import { LOGIN_SUCCESS, CURRENT_USER } from '../actions/actionTypes'
 
 function userCookingSessionsReducer(state = null, action) 
 {
