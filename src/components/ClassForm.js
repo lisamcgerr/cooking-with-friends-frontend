@@ -60,16 +60,31 @@ class ClassForm extends React.Component {
         })
     }
 
-    // componentDidUpdate(prevState, prevProps){
-    //     // if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
-    //     //     console.log('prevState', prevState.cooking_sessions)
-    //     //     console.log('prevProps', prevProps.title)
-
-    //     // } else {
-    //     //     console.log('no')
-    //     // }
-    //     //const session = this.props.cooking_sessions.filter(cookingSessionObj => cookingSessionObj.title === prevProps.title)
+    // componentDidMount(prevState, prevProps){
+    //     this.props.cooking_sessions.map(cs => {
+    //         if (cs.title === prevProps.title) {
+    //             console.log(cs, "cs ")
+    //             //return cs.id
+    //         } else {
+    //             console.log('no')
+    //         }
+    //     })
     // }
+
+    // componentDidUpdate(prevState, prevProps){
+    //     if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
+    //         console.log('prevState', prevState.cooking_sessions)
+    //         console.log('prevProps', prevProps.title)
+    //         console.log('blah', this.props.cooking_sessions.map(cs => cs.title))
+    //         const array = this.props.cooking_sessions.map(cs => (cs.title === prevProps.title) return cs)
+            
+
+    //     } else {
+    //         console.log('no')
+    //     }
+    // }
+            //const session = this.props.cooking_sessions.filter(cookingSessionObj => cookingSessionObj.title === prevProps.title)
+
 
 
     render(){
