@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { createCookingSession, createUserSession } from '../actions'
+import { createCookingSession, createUserSession, loadSessions, currentUser } from '../actions'
 
 class ClassForm extends React.Component {
     state = {
@@ -60,30 +60,37 @@ class ClassForm extends React.Component {
         })
     }
 
-    // componentDidMount(prevState, prevProps){
-    //     this.props.cooking_sessions.map(cs => {
-    //         if (cs.title === prevProps.title) {
-    //             console.log(cs, "cs ")
-    //             //return cs.id
-    //         } else {
-    //             console.log('no')
-    //         }
-    //     })
-    // }
 
-    // componentDidUpdate(prevState, prevProps){
-    //     if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
-    //         console.log('prevState', prevState.cooking_sessions)
-    //         console.log('prevProps', prevProps.title)
-    //         console.log('blah', this.props.cooking_sessions.map(cs => cs.title))
-    //         const array = this.props.cooking_sessions.map(cs => (cs.title === prevProps.title) return cs)
+    componentDidUpdate(prevState, _){
+        if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
+            //console.log('prevState', prevState.cooking_sessions)
+            //console.log('prevProps', prevProps.title)
+            fetch('http://localhost:3000/user_sessions')
+            .then(resp => resp.json())
+            .then(user_sessions => {
+              this.props.loadSessions(user_sessions)
+            })  
             
+            const token = localStorage.getItem('myAppToken')
 
-    //     } else {
-    //         console.log('no')
-    //     }
-    // }
-            //const session = this.props.cooking_sessions.filter(cookingSessionObj => cookingSessionObj.title === prevProps.title)
+            const reqObj = {
+                method: 'GET',
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+              }      
+              fetch('http://localhost:3000/profile', reqObj)
+              .then(resp => resp.json())
+              .then(data => {
+                this.props.currentUser(data)
+              })
+
+              this.props.history.push('/myclasses')
+
+        } else {
+            console.log('no')
+        }
+    }
 
 
 
@@ -135,7 +142,9 @@ function mapStateToProps(state){
 
 const mapDispatchToProps = {
     createCookingSession: createCookingSession,
-    createUserSession: createUserSession
+    createUserSession: createUserSession,
+    loadSessions: loadSessions,
+    currentUser: currentUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClassForm)

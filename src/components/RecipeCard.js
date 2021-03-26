@@ -50,11 +50,11 @@ handleLikes = (e) => {
                     </Card.Content>
                     <Card.Content extra>
                     <a>
-                        <Icon name='user' />
+                        {/* <Icon name='user' /> */}
                         {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
                     </a>
                     <br></br>
-                    <button> Create a Cooking Class </button>
+                    {/* <button id={this.props.recipe.id} > Create a Cooking Class </button> */}
                     </Card.Content>
                 
                 </Card>
