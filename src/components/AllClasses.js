@@ -7,6 +7,19 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 
 class AllClasses extends React.Component {
 
+  renderCookingSessionUsers = () => {
+    const cs_users = this.props.cooking_sessions.map(cs => {
+      return cs.users
+    })
+    console.log(cs_users)
+    cs_users.map(user => (
+      <a>
+      <Icon name='user' />
+      {user.username}
+    </a>
+    ))
+  }
+
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
             <Card>
@@ -20,10 +33,7 @@ class AllClasses extends React.Component {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                {/* <a href={this.props.cookingSession.meeting_Link} target='blank'><strong>Click here to get your meeting started</strong></a> */}
-              </a>
+            {this.renderCookingSessionUsers()}
             </Card.Content>
             <button id={csObj.id} onClick={this.handleClick}>Join Cooking Session</button>
           </Card>

@@ -77,9 +77,9 @@ export function createUserSession(user_session){
     }
 }
 
-export function updateLikes(id){
+export function updateLikes(recipe){
     return{
         type: LIKE_RECIPE,
-        id: id
+        recipe: recipe
     }
 }

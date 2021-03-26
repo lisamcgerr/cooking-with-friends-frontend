@@ -8,8 +8,13 @@ function recipesReducer(state = [], action)
         case ADD_RECIPE:
             return [action.recipe, ...state]
         case LIKE_RECIPE:
-            console.log('state', action.id)
-            return state.map(recipe => (recipe.id === action.id) ? {...recipe, likes: recipe.likes +1 } : null )
+            //debugger
+            return state.map(r => {
+                if (r.id === action.recipe.id){
+                   return {...action.recipe}
+                 } else { 
+                  return r }
+               })
         default:
             return state
 

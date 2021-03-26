@@ -8,9 +8,6 @@ import {loadRecipes} from '../actions/index'
 class RecipeCard extends React.Component {
 
 handleLikes = (e) => {
-    // grabs the likes count -- console.log(parseInt(e.target.parentElement.innerText))
-    // grabs the id number from the button console.log(parseInt(e.target.getAttribute('id')))
-
     const likes = parseInt(e.target.parentElement.innerText)
     const id = parseInt(e.target.getAttribute('id'))
 
@@ -21,12 +18,12 @@ handleLikes = (e) => {
         },
         body: JSON.stringify({likes: likes + 1})
     }
-
     fetch(`http://localhost:3000/recipes/${id}`, reqObj)
     .then(resp => resp.json())
     .then(updatedRecipe => {
+    
         console.log('updatedrecipe', updatedRecipe.id, updatedRecipe.likes)
-        this.props.updateLikes(updatedRecipe.id)
+        this.props.updateLikes(updatedRecipe)
         //this.props.history.push('/recipes')
     })
 
