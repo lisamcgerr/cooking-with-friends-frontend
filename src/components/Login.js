@@ -5,8 +5,8 @@ import { loginSuccess } from '../actions/index'
 
 class Login extends React.Component {
     state = {
-        username: 'samo',
-        password: 'abc',
+        username: '',
+        password: '',
         error: ''
     }
 
@@ -62,6 +62,7 @@ class Login extends React.Component {
                             <Form.Input
                                 fluid
                                 icon='lock'
+                                type='password'
                                 iconPosition='left'
                                 name={'password'} 
                                 onChange={this.handleInput} 
