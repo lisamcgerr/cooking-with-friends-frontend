@@ -38,12 +38,9 @@ class Signup extends React.Component {
             },
             body:  JSON.stringify({user: newUser})
         }
-        //debugger
         fetch('http://localhost:3000/users', reqObj)
         .then(resp => resp.json())
         .then(data => {
-            //debugger
-            console.log('data', data)
           this.props.addUser(data)
           this.props.history.push('/login')
         })

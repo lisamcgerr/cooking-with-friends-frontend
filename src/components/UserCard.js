@@ -1,12 +1,7 @@
 import React from 'react'
-import { Button, Comment, Form, Header } from 'semantic-ui-react'
-//import { connect } from 'react-redux'
-
+import { Comment } from 'semantic-ui-react'
 
 class UserCard extends React.Component {
-
-
-
     render(){
         return(
             <div>

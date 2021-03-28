@@ -5,7 +5,6 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 import UserCard from './UserCard'
 
 
-
 class AllClasses extends React.Component {
 
   renderCookingSessionUsers = () => {
@@ -20,7 +19,6 @@ class AllClasses extends React.Component {
     </a>
     ))
   }
-
 
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
@@ -40,11 +38,9 @@ class AllClasses extends React.Component {
             <button id={csObj.id} onClick={this.handleClick}>Join Cooking Session</button>
           </Card>
         ))
-
     }
 
     handleClick = (e) => {
-        //console.log(e.target.id)
         const new_user_id = this.props.auth.id
         const newUserSession = {user_id: new_user_id, cooking_session_id: parseInt(e.target.id)}
         console.log('new user session', newUserSession)
@@ -55,19 +51,19 @@ class AllClasses extends React.Component {
             },
             body:  JSON.stringify(newUserSession)
         }
-        //debugger
+       
         fetch('http://localhost:3000/user_sessions', reqObj)
         .then(resp => resp.json())
         .then(newUserSession => {
-            //console.log('user_session', newUserSession)
             if (newUserSession.message){
-
+              alert(newUserSession.message)
             } else { 
                 this.props.joinAClass(newUserSession)
                 this.props.history.push('/profile')}
         })
 
     }
+
 
 
     render(){

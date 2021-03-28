@@ -16,7 +16,6 @@ class RecipeForm extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        //console.log('state', e.target.value)
     }
 
     handleSubmit = (e) => {
@@ -31,12 +30,9 @@ class RecipeForm extends React.Component {
             },
             body:  JSON.stringify(newRecipe)
         }
-        //debugger
         fetch('http://localhost:3000/recipes', reqObj)
         .then(resp => resp.json())
         .then(newRecipe => {
-            //debugger
-            console.log('step', newRecipe)
           this.props.addRecipe(newRecipe)
           this.props.history.push('/recipes')
         })

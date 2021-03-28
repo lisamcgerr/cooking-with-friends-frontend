@@ -1,5 +1,4 @@
 import React from 'react'
-//import { Button, Form } from 'semantic-ui-react'
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
@@ -49,7 +48,6 @@ class Login extends React.Component {
     }
 
     render(){
-        //console.log(this.props, '---')
         return(
             <div>
                 {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
@@ -87,7 +85,6 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = {
-    //key to access : action creator
     loginSuccess: loginSuccess
 }
 

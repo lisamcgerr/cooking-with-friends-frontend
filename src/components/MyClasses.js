@@ -3,9 +3,6 @@ import { connect } from 'react-redux'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 class MyClassesCard extends React.Component {
-
-  //this.props.recipes.filter(recipe => recipe.id === this.props.cookingSession.recipe_id)? <Image  wrapped ui={false} src={this.props.cookingSession.recipe.image} /> : null
-
     render(){
         return(
             <Card>
@@ -39,4 +36,3 @@ function mapStateToProps(state){
 
 export default connect(mapStateToProps, null)(MyClassesCard)
 
-//this.props.recipes.filter(recipe => recipe.id === this.props.csRecipeId)? {this.props}

@@ -4,12 +4,6 @@ import { Menu } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import {logout} from '../actions/index'
 
-
-
-
-
-
-
 class Navbar extends React.Component {
 
     handleLogOut = () => {
