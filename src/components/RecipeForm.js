@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button, Form } from 'semantic-ui-react'
+//import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addRecipe } from '../actions/index'
+import { Button, Form, Grid, Header, Segment} from 'semantic-ui-react'
 
 class RecipeForm extends React.Component {
    state = {
@@ -41,34 +42,43 @@ class RecipeForm extends React.Component {
     render(){
         return(
             <div>
-                <h1>Add a new Recipe</h1>
-                <form onSubmit={this.handleSubmit} >
-                    <Form.Field>
-                        <label>Name: </label>
-                        <input name='name' type= 'text' value={this.state.name} onChange={this.handleChange} placeholder='name' />
-                    </Form.Field>
+             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                <Grid.Column style={{ maxWidth: 550 }}>
+                <Header as='h2' color='green' textAlign='center'>
+                   Add a Recipe
+                    </Header>
+                <Form onSubmit={this.handleSubmit} size='large'>
+                    <Segment inverted stacked>
+                    <Form.Input>
+                       
+                        <input name='name' type= 'text' value={this.state.name} onChange={this.handleChange} placeholder='name of recipe' />
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Description: </label>
-                        <input name='description' type= 'text' value={this.state.description} onChange={this.handleChange} placeholder='description' />
-                    </Form.Field>
+                    <Form.Input>
+                        
+                        <textarea name='description' type= 'text' value={this.state.description} onChange={this.handleChange} placeholder='description' />
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Prepration Time: </label>
+                    <Form.Input>
+                        
                         <input name='prep_time' type= 'text' value={this.state.prep_time} onChange={this.handleChange} placeholder='preparation time' />
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Recipe Link: </label>
+                    <Form.Input>
+                      
                         <input name='recipe_link' type= 'url' value={this.state.recipe_link} onChange={this.handleChange} placeholder='recipe link' />
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Image: </label>
-                        <input name='image' type= 'text' value={this.state.image} onChange={this.handleChange} placeholder='image link' />
-                    </Form.Field>
-                    <Button type='submit'>Submit</Button>
-                </form>
+                    <Form.Input>
+                     
+                        <input name='image' type= 'url' value={this.state.image} onChange={this.handleChange} placeholder='image link' />
+                    </Form.Input>
+                    <Button color='green' fluid size='large' type='submit'>Submit</Button>
+                
+                </Segment>
+                </Form>
+                </Grid.Column>
+                </Grid>
             </div>
         )
     }

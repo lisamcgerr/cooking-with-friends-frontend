@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
 
@@ -52,13 +52,13 @@ class Login extends React.Component {
             <div>
                 {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
                       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-                        <Grid.Column style={{ maxWidth: 450 }}>
-                        <Header as='h2' color='teal' textAlign='center'>
+                        <Grid.Column style={{ maxWidth: 550 }}>
+                        <Header as='h2' color='green' textAlign='center'>
                         Log-in to your account
                         </Header>
                         <Form onSubmit={this.handleSubmit} size='large'>
-                            <Segment stacked>
-                            <Form.Input fluid icon='user' name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />
+                            <Segment inverted stacked>
+                            <Form.Input fluid icon='user' iconPosition='left' name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />
                             <Form.Input
                                 fluid
                                 icon='lock'
@@ -69,14 +69,14 @@ class Login extends React.Component {
                                 placeholder='Password'
                             />
 
-                            <Button color='teal' fluid size='large'>
+                            <Button color='green' fluid size='large'>
                                 Login
                             </Button>
                             </Segment>
                         </Form>
-                        <Message>
+                        {/* <Message>
                             New to us? <a href='http://localhost:3001/signup'>Sign Up</a>
-                        </Message>
+                        </Message> */}
                         </Grid.Column>
                     </Grid>
             </div>

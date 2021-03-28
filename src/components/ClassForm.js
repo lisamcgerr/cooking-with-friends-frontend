@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Form } from 'semantic-ui-react'
+//import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Segment} from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { createCookingSession, createUserSession, loadSessions, currentUser } from '../actions'
 
@@ -85,34 +86,42 @@ class ClassForm extends React.Component {
     render(){
         return(
             <div>
-                <h1>Create a cooking Class with your friends</h1>
-                <form onSubmit={this.handleSubmit} >
-                    <Form.Field>
-                        <label>Cooking Session Title</label>
+             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                <Grid.Column style={{ maxWidth: 550 }}>
+                <Header as='h2' color='green' textAlign='center'>
+                   Create a Cooking Class
+                    </Header>
+                <Form onSubmit={this.handleSubmit} size='large'>
+                    <Segment inverted stacked>
+                    <Form.Input>
+                      
                         <input name='title' type= 'text' value={this.state.title} onChange={this.handleChange} placeholder='title' />
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Date: </label>
+                    <Form.Input>
+                        
                         <input name='date' type= 'datetime-local' value={this.state.date} onChange={this.handleChange} />
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Recipe: </label>
+                    <Form.Input>
+                        
                         <select name='recipe_id' value={this.state.recipe_id} onChange={this.handleChangeRecipe}>
                             {this.props.recipes.map((recipe) => {
                              return <option value={recipe.id}>{recipe.name}</option>;
                              })}
                         </select>
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Form.Field>
-                        <label>Meeting Link: </label>
+                    <Form.Input>
+                     
                         <input name='meeting_link' type= 'url' value={this.state.meeting_link} onChange={this.handleChange} placeholder='meeting link' />
-                    </Form.Field>
+                    </Form.Input>
 
-                    <Button type='submit'>Submit</Button>
-                </form>
+                    <Button color='green' fluid size='large' type='submit'>Submit</Button>
+                    </Segment>
+                </Form>
+                </Grid.Column>
+                </Grid>
 
             </div>
         )

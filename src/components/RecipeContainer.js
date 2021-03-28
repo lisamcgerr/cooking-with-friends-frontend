@@ -1,6 +1,8 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
 import { connect } from 'react-redux'
+import { Grid, Header} from 'semantic-ui-react'
+
 
 
 class RecipeContainer extends React.Component {
@@ -17,8 +19,15 @@ class RecipeContainer extends React.Component {
     render(){
         return(
             <div>
-              <h1>Recipes</h1>
-                {this.renderRecipes()}
+              <br></br>
+             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                <Grid.Column style={{ maxWidth: 550 }}>
+                <Header as='h2' color='green' textAlign='center'>
+                   Recipes
+                    </Header>
+                    {this.renderRecipes()}
+                  </Grid.Column>
+                </Grid>
             </div>
         )
     }
