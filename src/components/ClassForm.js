@@ -48,23 +48,13 @@ class ClassForm extends React.Component {
         .then(resp => resp.json())
         .then(newCookingSession => {
             console.log('data new cooking session', newCookingSession)
-            //debugger
             this.props.createCookingSession(newCookingSession)
-         
-            // const cookingSessionId = newCookingSession.id
-            // const newUserSession = {user_id: id, cooking_session_id: cookingSessionId}
-            // console.log(newUserSession, 'data new User Session')
-            // //debugger
-            // this.props.createUserSession(newUserSession)
-
         })
     }
 
 
     componentDidUpdate(prevState, _){
         if (this.props.cooking_sessions.length !== prevState.cooking_sessions.length ){
-            //console.log('prevState', prevState.cooking_sessions)
-            //console.log('prevProps', prevProps.title)
             fetch('http://localhost:3000/user_sessions')
             .then(resp => resp.json())
             .then(user_sessions => {
@@ -83,9 +73,8 @@ class ClassForm extends React.Component {
               .then(resp => resp.json())
               .then(data => {
                 this.props.currentUser(data)
+                this.props.history.push('/myclasses')
               })
-
-              this.props.history.push('/myclasses')
 
         } else {
             console.log('no')

@@ -1,7 +1,5 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
-// import RecipeForm from './RecipeForm'
-// import { Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 

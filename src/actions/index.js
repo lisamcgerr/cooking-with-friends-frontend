@@ -1,9 +1,16 @@
-import {LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS, CURRENT_USER, ADD_USER, LOAD_USERS, CREATE_COOKING_SESSION, LIKE_RECIPE, LOAD_COOKING_SESSIONS, LOAD_SESSIONS, CREATE_USER_SESSION, JOIN_A_CLASS } from './actionTypes'
+import { LOGOUT, LOAD_COMMENTS, LOAD_RECIPES, ADD_RECIPE, LOGIN_SUCCESS, CURRENT_USER, ADD_USER, LOAD_USERS, CREATE_COOKING_SESSION, LIKE_RECIPE, LOAD_COOKING_SESSIONS, LOAD_SESSIONS, CREATE_USER_SESSION, JOIN_A_CLASS } from './actionTypes'
 
 export function loadRecipes(recipes){
     return{
         type: LOAD_RECIPES,
         recipes: recipes
+    }
+}
+
+export function loadComments(comments){
+    return{
+        type: LOAD_COMMENTS,
+        comments: comments
     }
 }
 
@@ -31,6 +38,13 @@ export function addRecipe(recipe){
 export function loginSuccess(user){
     return {
         type: LOGIN_SUCCESS,
+        user: user
+    }
+}
+
+export function logout(user){
+    return {
+        type: LOGOUT,
         user: user
     }
 }

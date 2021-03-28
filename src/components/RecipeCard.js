@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Image, Icon } from 'semantic-ui-react'
-import { updateLikes } from '../actions/index'
-import {loadRecipes} from '../actions/index'
+import { Card, Image, Icon, Header } from 'semantic-ui-react'
+import { updateLikes, loadRecipes } from '../actions/index'
+import RecipeCommentCard from './RecipeCommentCard'
 
 
 class RecipeCard extends React.Component {
@@ -26,9 +26,18 @@ handleLikes = (e) => {
         this.props.updateLikes(updatedRecipe)
         //this.props.history.push('/recipes')
     })
-
-
 }
+
+renderComments = () => {
+    return this.props.recipe.comments.map(comment => (
+        <RecipeCommentCard 
+          key={comment.id} 
+          comment={comment}  
+        />
+    ))
+}
+
+
     
     render(){
         return(
@@ -58,7 +67,10 @@ handleLikes = (e) => {
                     </Card.Content>
                 
                 </Card>
-                <br></br>
+                <Header as='h3' dividing>
+                    Comments
+                </Header>
+                {this.renderComments()}
         </div>
         )
     }

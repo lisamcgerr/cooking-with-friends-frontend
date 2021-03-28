@@ -32,7 +32,8 @@ class MyClassesCard extends React.Component {
 function mapStateToProps(state){
     return{
         recipes: state.recipes,
-        cooking_sessions: state.cooking_sessions
+        cooking_sessions: state.cooking_sessions,
+        auth: state.auth
     }
 }
 

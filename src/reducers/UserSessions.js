@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, CURRENT_USER, JOIN_A_CLASS } from '../actions/actionTypes'
+import { LOGIN_SUCCESS, CURRENT_USER, JOIN_A_CLASS, LOGOUT } from '../actions/actionTypes'
 
 function userSessionsReducer(state = [], action) 
 {
@@ -8,6 +8,8 @@ function userSessionsReducer(state = [], action)
             return action.user.user_sessions
         case JOIN_A_CLASS:
             return [action.user_session, ...state]
+        case LOGOUT:
+            return null
         default:
             return state
 

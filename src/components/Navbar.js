@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
-import AllClasses from './AllClasses'
+import { connect } from 'react-redux'
+import {logout} from '../actions/index'
+
+
 
 
 
 
 
 class Navbar extends React.Component {
+
+    handleLogOut = () => {
+        localStorage.clear()
+        this.props.logout()
+    }
 
     render(){
         return(
@@ -33,10 +41,10 @@ class Navbar extends React.Component {
                         name='Create A New Recipe'/>
                     </Link>
 
-                    <Link to="/myclasses">
+                    {/* <Link to="/myclasses">
                         <Menu.Item
                         name='My Cooking Classes'/>
-                    </Link>
+                    </Link> */}
 
                     <Link to="/allclasses">
                         <Menu.Item
@@ -54,8 +62,8 @@ class Navbar extends React.Component {
                     </Link>
 
                     <Link to="/login">
-                        <Menu.Item
-                        name='Login'/>
+                       <Menu.Item
+                        name={this.props.auth ? 'Logout': 'Login'} onClick={this.handleLogOut}/>
                     </Link>
 
                     <Link to="/signup">
@@ -69,4 +77,14 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar
+function mapStateToProps(state){
+    return {
+        auth: state.auth
+    }
+}
+
+const mapDispatchToProps = {
+    logout: logout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

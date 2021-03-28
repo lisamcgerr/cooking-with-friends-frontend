@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, CURRENT_USER } from '../actions/actionTypes'
+import { LOGIN_SUCCESS, CURRENT_USER, LOGOUT } from '../actions/actionTypes'
 
 function userRecipesReducer(state = [], action) 
 {
@@ -6,6 +6,8 @@ function userRecipesReducer(state = [], action)
         case LOGIN_SUCCESS:
         case CURRENT_USER:   
             return action.user.recipes
+        case LOGOUT:
+            return null
         default:
             return state
 

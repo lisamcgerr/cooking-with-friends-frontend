@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, CURRENT_USER } from '../actions/actionTypes'
+import { LOGIN_SUCCESS, CURRENT_USER, LOGOUT } from '../actions/actionTypes'
 
 function authReducer(state = null, action) 
 {
@@ -13,6 +13,8 @@ function authReducer(state = null, action)
                 email: action.user.email,
                 bio: action.user.bio,
                 image: action.user.image }
+        case LOGOUT:
+            return null
         default:
             return state
 

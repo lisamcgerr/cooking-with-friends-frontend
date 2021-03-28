@@ -7,6 +7,7 @@ import userRecipesReducer from './userRecipes'
 import loadUsersReducer from './loadUsers'
 import cookingSessionsReducer from './CookingSessions'
 import sessionsReducer from './Sessions'
+import commentsReducer from './Comments'
 
 
 
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     user_recipes: userRecipesReducer, 
     users: loadUsersReducer,
     cooking_sessions: cookingSessionsReducer,
-    sessions: sessionsReducer
+    sessions: sessionsReducer,
+    comments: commentsReducer
 })
 
 export default rootReducer

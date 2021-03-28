@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import MyClassesContainer from './MyClassesContainer'
 
 class Dashboard extends React.Component {
 
@@ -10,7 +11,7 @@ class Dashboard extends React.Component {
             <div>
                 <h1>{this.props.auth.username}'s Home Page</h1>
                 <Image src={this.props.auth.image} size='small' />
-                
+                <MyClassesContainer />
             </div>
         )
     }

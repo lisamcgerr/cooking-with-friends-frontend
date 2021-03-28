@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { joinAClass } from '../actions/index'
 import { Card, Icon, Image } from 'semantic-ui-react'
+import UserCard from './UserCard'
 
 
 
@@ -20,13 +21,14 @@ class AllClasses extends React.Component {
     ))
   }
 
+
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
             <Card>
             <Card.Content>
               <Card.Header>{csObj.title}</Card.Header>
               <Card.Meta>
-                <span className='date'>{csObj.date}</span>
+                <span className='date'>{csObj.date.toLocaleString('en-us', 'long')}</span>
               </Card.Meta>
               <Card.Description>
         
@@ -57,9 +59,12 @@ class AllClasses extends React.Component {
         fetch('http://localhost:3000/user_sessions', reqObj)
         .then(resp => resp.json())
         .then(newUserSession => {
-            console.log('user_session', newUserSession)
-          this.props.joinAClass(newUserSession)
-          this.props.history.push('/myclasses')
+            //console.log('user_session', newUserSession)
+            if (newUserSession.message){
+
+            } else { 
+                this.props.joinAClass(newUserSession)
+                this.props.history.push('/profile')}
         })
 
     }
