@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon } from 'semantic-ui-react'
 
 class MyClassesCard extends React.Component {
     render(){
@@ -16,10 +16,14 @@ class MyClassesCard extends React.Component {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <a>
+              <>
                 <Icon name='user' />
-                {/* <a href={this.props.cookingSession.meeting_Link} target='blank'><strong>Click here to get your meeting started</strong></a> */}
-              </a>
+                {/* {this.props.cookingSession.users.map(user => (
+                <ul>
+                <li>{user.username}</li>
+                </ul>
+              ))} */}
+              </>
             </Card.Content>
           </Card>
         )

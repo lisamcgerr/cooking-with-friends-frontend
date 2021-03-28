@@ -30,7 +30,6 @@ class ClassForm extends React.Component {
         })
     }
 
-
     handleSubmit = (e) => {
         e.preventDefault()
         const id = this.props.auth.id

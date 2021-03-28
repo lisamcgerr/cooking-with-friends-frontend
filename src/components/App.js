@@ -11,11 +11,15 @@ import RecipeForm from './RecipeForm'
 import 'semantic-ui-css/semantic.min.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { currentUser, loadCookingSessions, loadRecipes, loadComments, loadSessions, loadUsers } from '../actions/index'
 import ClassForm from './ClassForm'
 import About from './About'
 import AllClasses from './AllClasses'
-
+import {  currentUser, 
+          loadCookingSessions, 
+          loadRecipes, 
+          loadComments, 
+          loadSessions, 
+          loadUsers } from '../actions/index'
 
 
 
@@ -82,8 +86,6 @@ class App extends React.Component {
     return(
       <div>
         <Navbar />
-        
-        {/* <RecipeContainer recipes={this.state.recipes}/> */}
           <Switch>
             <Route exact path='/createaclass' component={ClassForm} />
             <Route exact path='/recipes' component={RecipeContainer} />

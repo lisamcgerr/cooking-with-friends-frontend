@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { joinAClass } from '../actions/index'
-import { Card, Icon, Image } from 'semantic-ui-react'
-import UserCard from './UserCard'
-
+import { Card, Icon } from 'semantic-ui-react'
+//import UserCard from './UserCard'
 
 class AllClasses extends React.Component {
 
@@ -13,10 +12,10 @@ class AllClasses extends React.Component {
     })
     console.log(cs_users)
     cs_users.map(user => (
-      <a>
+      <>
       <Icon name='user' />
       {user.username}
-    </a>
+    </>
     ))
   }
 
@@ -33,9 +32,14 @@ class AllClasses extends React.Component {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-            {this.renderCookingSessionUsers()}
+              {csObj.users.map(user => (
+                <ul>
+                <li>{user.username}</li>
+                </ul>
+              ))}
+            <button id={csObj.id} onClick={this.handleClick}>Join {csObj.title}</button>
             </Card.Content>
-            <button id={csObj.id} onClick={this.handleClick}>Join Cooking Session</button>
+           
           </Card>
         ))
     }
@@ -63,8 +67,6 @@ class AllClasses extends React.Component {
         })
 
     }
-
-
 
     render(){
         return(

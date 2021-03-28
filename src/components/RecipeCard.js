@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Image, Icon, Header } from 'semantic-ui-react'
+import { Card, Image, Header } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
 
@@ -58,10 +58,10 @@ renderComments = () => {
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                    <a>
+                    <>
                         {/* <Icon name='user' /> */}
                         {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
-                    </a>
+                    </>
                     <br></br>
                     {/* <button id={this.props.recipe.id} > Create a Cooking Class </button> */}
                     </Card.Content>

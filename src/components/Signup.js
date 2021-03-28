@@ -3,8 +3,6 @@ import { Button, Form } from 'semantic-ui-react'
 //import { Form, Input, TextArea, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/index'
-//import uuid from 'uuid'
-
 
 class Signup extends React.Component {
 
