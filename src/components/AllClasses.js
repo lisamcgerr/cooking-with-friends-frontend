@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { joinAClass, currentUser } from '../actions/index'
+import { loadCookingSessions, createUserSession, joinAClass, currentUser, createCookingSession, createUserCookingSession } from '../actions/index'
 import { Card, Icon, Button, Grid, Header } from 'semantic-ui-react'
 //import UserCard from './UserCard'
 
 class AllClasses extends React.Component {
+
 
   renderCookingSessionUsers = () => {
     const cs_users = this.props.cooking_sessions.map(cs => {
@@ -62,13 +63,37 @@ class AllClasses extends React.Component {
         fetch('http://localhost:3000/user_sessions', reqObj)
         .then(resp => resp.json())
         .then(newUserSession => {
+          
             if (newUserSession.message){
               alert(newUserSession.message)
             } else { 
                 this.props.joinAClass(newUserSession)
-                this.props.history.push('/profile')}
+                this.props.createUserSession(newUserSession)
+                //console.log('newUserSession', newUserSession.cooking_session_id)
+                const csID = parseInt(newUserSession.cooking_session_id)
+                fetch(`http://localhost:3000/cooking_sessions/${csID}`)
+                .then(resp => resp.json())
+                .then(cooking_session => {
+                  console.log(cooking_session, 'cooking sesssion data')
+                  this.props.createUserCookingSession(cooking_session)
+                  this.props.history.push('/profile')
+                })
+              }
         })
+      
+    }
 
+    componentDidUpdate(prevState, _){
+      if (this.props.user_cooking_sessions.length !== prevState.user_cooking_sessions.length ){
+
+      fetch('http://localhost:3000/cooking_sessions')
+      .then(resp => resp.json())
+      .then(cooking_sessions => {
+        this.props.loadCookingSessions(cooking_sessions)
+      })
+    } else {
+        console.log('no')
+    }
     }
 
     render(){
@@ -89,13 +114,18 @@ function mapStateToProps(state){
         recipes: state.recipes,
         cooking_sessions: state.cooking_sessions,
         auth: state.auth,
-        users: state.users
+        users: state.users,
+        user_cooking_sessions: state.user_cooking_sessions
     }
 }
 
 const mapDispatchToProps = {
     joinAClass: joinAClass,
-    currentUser: currentUser
+    loadCookingSessions: loadCookingSessions,
+    createUserSession: createUserSession,
+    createCookingSession: createCookingSession,
+    currentUser: currentUser,
+    createUserCookingSession: createUserCookingSession
 }
 
 

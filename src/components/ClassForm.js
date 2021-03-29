@@ -73,6 +73,7 @@ class ClassForm extends React.Component {
               .then(resp => resp.json())
               .then(data => {
                 this.props.currentUser(data)
+    
                 this.props.history.push('/myclasses')
               })
 

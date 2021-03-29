@@ -121,6 +121,16 @@ class Junk extends React.Component {
 
                     <Button type='submit'>Submit</Button>
                 </form> */}
+
+                                // console.log('userSessionId', newCS)
+                // const cs = this.props.cooking_sessions.find(newCS)
+            //   const getCookingSession = (newCS) => {
+            //     const details = this.props.cooking_sessions.find(cs => cs.id === newCS)
+            //     console.log(details, 'cs deets')
+            // }
+            // getCookingSession(newCS)
+            //   debugger
+              
         )
     }
 }
