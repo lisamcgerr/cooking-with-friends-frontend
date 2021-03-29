@@ -86,7 +86,10 @@ class ClassForm extends React.Component {
     render(){
         return(
             <div>
-             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                <br></br>
+                <br></br>
+                <br></br>
+             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 550 }}>
                 <Header as='h2' color='green' textAlign='center'>
                    Create a Cooking Class

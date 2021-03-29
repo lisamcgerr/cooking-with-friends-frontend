@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Header } from 'semantic-ui-react'
+import { Container, Header, Image } from 'semantic-ui-react'
 
 class About extends React.Component {
 
@@ -8,11 +8,11 @@ class About extends React.Component {
         return(
             <div>
                 <br></br>
-                <br></br>
+                <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112770681-7cdfe080-8fed-11eb-95f9-bed43cb01f52.jpg' width='100%' />
                 <Container text>
                 <Header as='h2'>This is the About Page</Header>
                 <p>
-                Created by a Flatiron Student as my final project blah blah blah
+                Inspired by virtually distanced dinners - never eat alone
                 </p>
                 <p>
                 images 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Card, Image, Header, Icon } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
+import '../App.css'
 
 
 class RecipeCard extends React.Component {
@@ -42,7 +43,7 @@ renderComments = () => {
     render(){
         return(
         <div>
-                <Card>
+                <Card >
                     <Image src={this.props.recipe.image} wrapped ui={false} />
                     <Card.Content>
                     <Card.Header>{this.props.recipe.name}</Card.Header>
@@ -67,10 +68,12 @@ renderComments = () => {
                     </Card.Content>
                 
                 </Card>
-                <Header as='h3' dividing>
-                    Comments
-                </Header>
-                {this.renderComments()}
+                    <Header as='h3' dividing>
+                        Comments
+                    </Header>
+                        {this.renderComments()}
+
+            )
         </div>
         )
     }

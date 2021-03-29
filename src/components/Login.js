@@ -50,8 +50,11 @@ class Login extends React.Component {
     render(){
         return(
             <div>
+                 <br></br>
+                <br></br>
+                <br></br>
                 {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
-                      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                         <Grid.Column style={{ maxWidth: 550 }}>
                         <Header as='h2' color='green' textAlign='center'>
                         Log-in to your account

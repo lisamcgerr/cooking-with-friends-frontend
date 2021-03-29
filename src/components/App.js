@@ -8,11 +8,11 @@ import Dashboard from './Dashboard'
 import RecipeContainer from './RecipeContainer'
 import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
-import 'semantic-ui-css/semantic.min.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ClassForm from './ClassForm'
 import About from './About'
+import { Image } from 'semantic-ui-react'
 import AllClasses from './AllClasses'
 import {  currentUser, 
           loadCookingSessions, 
@@ -20,7 +20,6 @@ import {  currentUser,
           loadComments, 
           loadSessions, 
           loadUsers } from '../actions/index'
-
 
 
 class App extends React.Component {
@@ -86,6 +85,7 @@ class App extends React.Component {
     return(
       <div>
         <Navbar />
+        <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112771285-b5cd8480-8ff0-11eb-8775-03cbc7804493.png' width='100%' />
           <Switch>
             <Route exact path='/createaclass' component={ClassForm} />
             <Route exact path='/recipes' component={RecipeContainer} />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { joinAClass } from '../actions/index'
-import { Card, Icon } from 'semantic-ui-react'
+import { joinAClass, currentUser } from '../actions/index'
+import { Card, Icon, Button, Grid, Header } from 'semantic-ui-react'
 //import UserCard from './UserCard'
 
 class AllClasses extends React.Component {
@@ -21,6 +21,7 @@ class AllClasses extends React.Component {
 
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
+
             <Card>
             <Card.Content>
               <Card.Header>{csObj.title}</Card.Header>
@@ -33,14 +34,16 @@ class AllClasses extends React.Component {
             </Card.Content>
             <Card.Content extra>
               {csObj.users.map(user => (
-                <ul>
-                <li>{user.username}</li>
-                </ul>
+                <p><Icon name='user' />{user.username}</p>
               ))}
-            <button id={csObj.id} onClick={this.handleClick}>Join {csObj.title}</button>
+
+          {/* {this.props.users.filter(user => (user.id === parseInt(csObj.host_id) <p>{user.username}</p>))} */}
+
+            <Button color='green' id={csObj.id} onClick={this.handleClick}>Join Cooking Class</Button>
             </Card.Content>
            
           </Card>
+
         ))
     }
 
@@ -71,7 +74,10 @@ class AllClasses extends React.Component {
     render(){
         return(
             <div>
-                <h1>All Cooking Classes</h1>
+              <br></br>
+               <Header as='h1' color='green' textAlign='center'>
+                            All Cooking Classes
+                </Header>
                 {this.renderAllClasses()}
             </div>
         )
@@ -82,12 +88,14 @@ function mapStateToProps(state){
     return{
         recipes: state.recipes,
         cooking_sessions: state.cooking_sessions,
-        auth: state.auth
+        auth: state.auth,
+        users: state.users
     }
 }
 
 const mapDispatchToProps = {
-    joinAClass: joinAClass
+    joinAClass: joinAClass,
+    currentUser: currentUser
 }
 
 
