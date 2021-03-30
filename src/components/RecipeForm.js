@@ -47,7 +47,7 @@ class RecipeForm extends React.Component {
                 <br></br>
              <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 550 }}>
-                <Header as='h2' color='green' textAlign='center'>
+                <Header as='h1' color='green' textAlign='center'>
                    Add a Recipe
                     </Header>
                 <Form onSubmit={this.handleSubmit} size='large'>

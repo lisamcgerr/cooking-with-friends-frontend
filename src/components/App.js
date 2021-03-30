@@ -5,14 +5,14 @@ import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
 import Navbar from './Navbar'
-import Dashboard from './Dashboard'
+//import Dashboard from './Dashboard'
 import RecipeContainer from './RecipeContainer'
 import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ClassForm from './ClassForm'
-import About from './About'
+//import About from './About'
 import { Image } from 'semantic-ui-react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AllClasses from './AllClasses'
@@ -111,15 +111,13 @@ componentDidUpdate(prevState, _){
     return(
       <div>
         <Navbar />
-        <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112771285-b5cd8480-8ff0-11eb-8775-03cbc7804493.png' width='100%' />
+        <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112771285-b5cd8480-8ff0-11eb-8775-03cbc7804493.png' width='100%' paddingTop='0' />
           <Switch>
             <Route exact path='/createaclass' component={ClassForm} />
             <Route exact path='/recipes' component={RecipeContainer} />
-            <Route exact path='/about' component={About} />
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/login' component={Login}/>
-            <Route exact path='/profile' component={Dashboard}/>
-            <Route exact path='/myclasses' component={MyClassesContainer}/>
+            <Route exact path='/profile' component={MyClassesContainer}/>
             <Route exact path='/' component={Home}/>
             <Route exact path='/recipes/new' component={RecipeForm}/>
             <Route exact path='/allclasses' component={AllClasses}/>

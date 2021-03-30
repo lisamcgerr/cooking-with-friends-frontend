@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 //import { Icon } from 'semantic-ui-react'
-import { Card, Image, Header, Icon, Grid } from 'semantic-ui-react'
+import { Card, Image, Icon, Grid, Header } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
 import '../App.css'
@@ -67,14 +67,12 @@ renderComments = () => {
                     </>
                     <br></br>
                     </Card.Content>
-                
-                </Card>
-                    {/* <Header as='h3' dividing>
+                    <Header as='h3' dividing>
                         Comments
                     </Header>
-                        {this.renderComments()} */}
+                        {this.renderComments()}
+                </Card>
 
-            
         </Grid.Row>
 
         

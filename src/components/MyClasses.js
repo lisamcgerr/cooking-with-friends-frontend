@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Icon } from 'semantic-ui-react'
+import { Card, Grid } from 'semantic-ui-react'
 
 class MyClassesCard extends React.Component {
     render(){
         return(
+          <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
             <Card>
             <Card.Content>
               <Card.Header>{this.props.cookingSession.title}</Card.Header>
@@ -23,6 +24,7 @@ class MyClassesCard extends React.Component {
               </>
             </Card.Content>
           </Card>
+          </Grid.Row>
         )
     }
 }

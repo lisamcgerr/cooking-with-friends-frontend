@@ -32,7 +32,7 @@ class AllClasses extends React.Component {
 
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
-
+          <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
             <Card>
             <Card.Content>
               <Card.Header>{csObj.title}</Card.Header>
@@ -54,7 +54,7 @@ class AllClasses extends React.Component {
             </Card.Content>
            
           </Card>
-
+        </Grid.Row>
         ))
     }
 
@@ -109,11 +109,20 @@ class AllClasses extends React.Component {
     render(){
         return(
             <div>
-              <br></br>
-               <Header as='h1' color='green' textAlign='center'>
-                            All Cooking Classes
-                </Header>
-                {this.renderAllClasses()}
+              <Grid divided='vertically' textAlign='center'>
+               <Grid.Row columns={1} >
+                  <Header as='h1' color='green' textAlign='center'>
+                    <br></br>
+                   Cooking Classes
+                  </Header>
+                
+                    <Grid.Column style={{ marginLeft: '275px', height: '100vh', paddingTop: '50px' }}>
+                      <Card.Group itemsPerRow={1} >
+                    {this.renderAllClasses()}
+                    </Card.Group>
+                    </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </div>
         )
     }

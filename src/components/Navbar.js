@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Grid } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import {logout} from '../actions/index'
 
@@ -13,16 +13,12 @@ class Navbar extends React.Component {
 
     render(){
         return(
-            <div>
-                <Menu horizontalAlign='' >
+          
+                <Menu textAlign="center" size='large' >
                     <Link to="/">
                         <Menu.Item
+                        
                         name='Home'/>
-                    </Link>
-
-                    <Link to="/about">
-                        <Menu.Item
-                        name='About'/>
                     </Link>
 
                     <Link to="/recipes">
@@ -66,7 +62,7 @@ class Navbar extends React.Component {
                     </Link>
                     
                 </Menu>
-            </div>
+           
         )
     }
 }
