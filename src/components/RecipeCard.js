@@ -1,13 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 //import { Icon } from 'semantic-ui-react'
-import { Card, Image, Icon, Grid, Header } from 'semantic-ui-react'
+import { Card, Image, Icon, Grid, Header, Button } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
 import '../App.css'
 
 
 class RecipeCard extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            showComments: false
+        }
+    }
 
 handleLikes = (e) => {
     const likes = parseInt(e.target.parentElement.innerText)
@@ -39,6 +45,12 @@ renderComments = () => {
     ))
 }
 
+handleToggleComments = () => {
+    this.setState({
+        showComments: !this.state.showComments
+    })
+}
+
 
     
     render(){
@@ -63,14 +75,14 @@ renderComments = () => {
                     </Card.Content>
                     <Card.Content extra>
                     <>
-                        <Icon name='heart' /> {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
+                        <Icon name='heart' /> {this.props.recipe.likes} likes <Button color='green'  id={this.props.recipe.id} onClick={this.handleLikes}> Like </Button>
                     </>
                     <br></br>
                     </Card.Content>
                     <Header as='h3' dividing>
-                        Comments
+                        <Button onClick={this.handleToggleComments} >Display Comments</Button>
                     </Header>
-                        {this.renderComments()}
+                        {this.state.showComments ? this.renderComments() : null}
                 </Card>
 
         </Grid.Row>
