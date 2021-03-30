@@ -19,13 +19,17 @@ class MyClassesContainer extends React.Component {
     render(){
         return(
         <>  
-        <Header paddingTop='50px'as='h1' color='green' textAlign='center'>
+        <Grid paddingTop='50px' paddingLeft='50px' as='h1' color='green' textAlign='center'>
                 {this.props.auth.first_name} {this.props.auth.last_name}'s Dashboard
-        </Header>   
-        <Image textAlign='center' src={this.props.auth.image} size='large' /> 
-        <Header marginLeft= '275px' paddingTop='50px'as='h2' color='green' >
+        </Grid>   
+        <Grid marginLeft= '275px' paddingTop='50px'as='h2' color='green' >
+        <Image circular textAlign='center' src={this.props.auth.image} size='large' /> 
+        <br></br>
                 username: {this.props.auth.username}
-        </Header>     
+        </Grid>     
+        <Header marginLeft= '275px' paddingTop='50px'as='h3' color='green' >
+                bio: {this.props.auth.bio}
+        </Header>  
             <div class="ui center aligned middle aligned grid" >
             <Grid divided='vertically' textAlign='center'>
               <Grid.Row columns={1} >
