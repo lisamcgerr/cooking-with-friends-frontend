@@ -63,11 +63,9 @@ renderComments = () => {
                     </Card.Content>
                     <Card.Content extra>
                     <>
-                        {/* <Icon name='user' /> */}
                         <Icon name='heart' /> {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
                     </>
                     <br></br>
-                    {/* <button id={this.props.recipe.id} > Create a Cooking Class </button> */}
                     </Card.Content>
                 
                 </Card>

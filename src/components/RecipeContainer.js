@@ -23,11 +23,12 @@ class RecipeContainer extends React.Component {
           <div class="ui center aligned middle aligned grid" >
              <Grid divided='vertically' textAlign='center'>
                <Grid.Row columns={1} >
-                  <Header as='h2' color='green' textAlign='center'>
+                  <Header as='h1' color='green' textAlign='center'>
+                    <br></br>
                    Recipes
                   </Header>
                 
-                    <Grid.Column style={{ marginLeft: '150px', height: '100vh', paddingTop: '100px' }}>
+                    <Grid.Column style={{ marginLeft: '275px', height: '100vh', paddingTop: '50px' }}>
                       <Card.Group itemsPerRow={1} >
                     {this.renderRecipes()}
                     </Card.Group>
