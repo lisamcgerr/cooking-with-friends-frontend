@@ -45,8 +45,8 @@ renderComments = () => {
         return(
 
 
-        <Grid.Row>
-                <Card className="card">
+        <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
+                <Card className="card" >
                     <Image src={this.props.recipe.image} wrapped ui={false} />
                     <Card.Content>
                     <Card.Header>{this.props.recipe.name}</Card.Header>
@@ -71,10 +71,10 @@ renderComments = () => {
                     </Card.Content>
                 
                 </Card>
-                    <Header as='h3' dividing>
+                    {/* <Header as='h3' dividing>
                         Comments
                     </Header>
-                        {this.renderComments()}
+                        {this.renderComments()} */}
 
             
         </Grid.Row>
