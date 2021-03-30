@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Image, Header, Icon } from 'semantic-ui-react'
+//import { Icon } from 'semantic-ui-react'
+import { Card, Image, Header, Icon, Grid } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
 import '../App.css'
@@ -14,7 +15,7 @@ handleLikes = (e) => {
 
     const reqObj = {
         method: 'PATCH',
-        headers: {
+        headers: {    
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({likes: likes + 1})
@@ -42,8 +43,10 @@ renderComments = () => {
     
     render(){
         return(
-        <div>
-                <Card >
+
+
+        <Grid.Row>
+                <Card className="card">
                     <Image src={this.props.recipe.image} wrapped ui={false} />
                     <Card.Content>
                     <Card.Header>{this.props.recipe.name}</Card.Header>
@@ -73,8 +76,40 @@ renderComments = () => {
                     </Header>
                         {this.renderComments()}
 
-            )
-        </div>
+            
+        </Grid.Row>
+
+        
+
+        
+        // <div className="gallery">
+        //     <img src={this.props.recipe.image} alt={this.props.recipe.name}/>
+            
+        //     <h2>{this.props.recipe.name}</h2>
+        //     <p>
+        //         <span className='date'>{this.props.recipe.prep_time}</span>
+        //     </p>
+        //     <div className='desc'>
+        //     {this.props.recipe.description}
+        //     </div>
+        //     <br></br>
+        //         <a href={this.props.recipe.recipe_link} target='blank'><strong>Recipe Ingredients and Directions Linked Here</strong></a>
+
+            
+        //     <div>
+        //     <>
+        //         <Icon name='heart' /> {this.props.recipe.likes} likes <button id={this.props.recipe.id} onClick={this.handleLikes}> Like </button>
+        //     </>
+        //     <br></br>
+        //     </div>
+        
+        // </div>
+            // <Header as='h3'>
+            //     Comments
+            // </Header>
+            //     {this.renderComments()}
+
+    
         )
     }
 }

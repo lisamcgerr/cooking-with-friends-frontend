@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
@@ -61,6 +62,27 @@ class App extends React.Component {
       this.props.loadCookingSessions(cooking_sessions)
     })
 
+    // fetch('http://localhost:3000/recipes')
+    // .then(resp => resp.json())
+    // .then(recipes => {
+    //   this.props.loadRecipes(recipes)
+    // })
+
+    // fetch('http://localhost:3000/user_sessions')
+    // .then(resp => resp.json())
+    // .then(user_sessions => {
+    //   this.props.loadSessions(user_sessions)
+    // })
+
+    // fetch('http://localhost:3000/comments')
+    // .then(resp => resp.json())
+    // .then(comments => {
+    //   this.props.loadComments(comments)
+    // })
+}
+
+componentDidUpdate(prevState, _){
+  if (this.props.auth){
     fetch('http://localhost:3000/recipes')
     .then(resp => resp.json())
     .then(recipes => {
@@ -78,6 +100,9 @@ class App extends React.Component {
     .then(comments => {
       this.props.loadComments(comments)
     })
+  } else {
+    console.log('no')
+  }
 }
    
 
@@ -113,4 +138,10 @@ const mapDispatchToProps = {
   loadComments: loadComments
 }
 
-export default connect(null, mapDispatchToProps)(withRouter(App))
+function mapStateToProps(state){
+  return {
+      auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

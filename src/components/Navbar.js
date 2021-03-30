@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     render(){
         return(
             <div>
-                <Menu>
+                <Menu horizontalAlign='' >
                     <Link to="/">
                         <Menu.Item
                         name='Home'/>

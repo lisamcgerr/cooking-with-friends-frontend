@@ -37,7 +37,7 @@ class AllClasses extends React.Component {
             <Card.Content>
               <Card.Header>{csObj.title}</Card.Header>
               <Card.Meta>
-                <span className='date'>{csObj.date.toLocaleString('en-us', 'long')}</span>
+                <span className='date'>{csObj.date.toLocaleString('en-us')}</span>
               </Card.Meta>
               <Card.Description>
             {csObj.host_id === this.props.auth.id ? <Button color='red' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}

@@ -20,17 +20,18 @@ class RecipeContainer extends React.Component {
 
     render(){
         return(
-            <div>
-              <br></br>
+            // <div id='collection'>
+            //   <br></br>
              <Grid className='grid-container' textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-                <Grid.Column style={{ maxWidth: 550 }}>
-                <Header as='h2' color='green' textAlign='center'>
+                  <Header as='h2' color='green' textAlign='center'>
                    Recipes
-                    </Header>
+                  </Header>
+                
+                    <Grid.Column style={{ maxWidth: 550 }}>
                     {this.renderRecipes()}
-                  </Grid.Column>
+                    </Grid.Column>
                 </Grid>
-            </div>
+            //</div>
         )
     }
 }
