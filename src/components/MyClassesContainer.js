@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MyClassesCard from './MyClasses'
 import { Grid, Header, Card, Image} from 'semantic-ui-react'
+import Grid from '@material-ui/core/Grid'
 
 
 class MyClassesContainer extends React.Component {
@@ -19,7 +20,7 @@ class MyClassesContainer extends React.Component {
     render(){
         return(
         <>  
-        <Grid paddingTop='50px' paddingLeft='50px' as='h1' color='green' textAlign='center'>
+        <Grid as='h1' color='green' textAlign='center'>
                 {this.props.auth.first_name} {this.props.auth.last_name}'s Dashboard
         </Grid>   
         <Grid marginLeft= '275px' paddingTop='50px'as='h2' color='green' >

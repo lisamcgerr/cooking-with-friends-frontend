@@ -83,6 +83,7 @@ handleToggleComments = () => {
                         <Button onClick={this.handleToggleComments} >Display Comments</Button>
                     </Header>
                         {this.state.showComments ? this.renderComments() : null}
+                        <br></br>
                 </Card>
 
         </Grid.Row>

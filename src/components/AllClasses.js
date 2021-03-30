@@ -30,6 +30,20 @@ class AllClasses extends React.Component {
     })
   }
 
+  renderHost = (user_id) => {
+    if (user_id === 1 ) {
+        return 'ironman'
+    } else if (user_id === 2) {
+        return 'thor'
+    } else if (user_id === 3) {
+        return 'lisa_loves_cooking'
+    } else if (user_id === 4) {
+        return 'dexy_loves_eating'
+    } else {
+        return 'scarlet_witch'
+    }
+}
+
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
           <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
@@ -37,13 +51,17 @@ class AllClasses extends React.Component {
             <Card.Content>
               <Card.Header>{csObj.title}</Card.Header>
               <Card.Meta>
-                <span className='date'>{csObj.date.toLocaleString('en-us')}</span>
+                <span className='date'>{csObj.date}</span>
+                <p><Icon name='user' /> Host: {this.renderHost(csObj.host_id)}</p>
               </Card.Meta>
               <Card.Description>
             {csObj.host_id === this.props.auth.id ? <Button color='red' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
+              <strong>Users joining cooking session:</strong>
+              <br></br>
+              <br></br>
               {csObj.users.map(user => (
                 <p><Icon name='user' />{user.username}</p>
               ))}
