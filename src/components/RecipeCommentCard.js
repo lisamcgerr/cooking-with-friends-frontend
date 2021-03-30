@@ -14,7 +14,7 @@ class RecipeCommentCard extends React.Component {
                         <Comment>
                         {/* <Comment.Avatar as='a' src="https://user-images.githubusercontent.com/73184313/112050087-726da480-8b1e-11eb-884e-ec03154a1980.png"/> */}
                         <Comment.Content>
-                            <Comment.Author as='a'><Icon name='user' />Matt</Comment.Author>
+                            <Comment.Author as='a'><Icon name='user'/>Matt</Comment.Author>
                             <Comment.Metadata>
                             <span>{this.props.comment.created_at}</span>
                             </Comment.Metadata>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import ClassForm from './ClassForm'
 import About from './About'
 import { Image } from 'semantic-ui-react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import AllClasses from './AllClasses'
 import {  currentUser, 
           loadCookingSessions, 
