@@ -1,4 +1,4 @@
-import { LOAD_SESSIONS, CREATE_USER_SESSION, JOIN_A_CLASS} from '../actions/actionTypes'
+import { LOAD_SESSIONS, CREATE_USER_SESSION } from '../actions/actionTypes'
 
 function sessionsReducer (state = [], action) 
 {

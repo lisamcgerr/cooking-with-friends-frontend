@@ -17,11 +17,8 @@ class MyClassesCard extends React.Component {
             </Card.Content>
             <Card.Content extra>
               <>
-                <Icon name='user' />
                 {/* {this.props.cookingSession.users.map(user => (
-                <ul>
-                <li>{user.username}</li>
-                </ul>
+                  <p><Icon name='user' />{user.username}</p>
               ))} */}
               </>
             </Card.Content>

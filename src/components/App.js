@@ -54,16 +54,16 @@ class App extends React.Component {
       })
     }
 
-    fetch('http://localhost:3000/recipes')
-    .then(resp => resp.json())
-    .then(recipes => {
-      this.props.loadRecipes(recipes)
-    })
-
     fetch('http://localhost:3000/cooking_sessions')
     .then(resp => resp.json())
     .then(cooking_sessions => {
       this.props.loadCookingSessions(cooking_sessions)
+    })
+
+    fetch('http://localhost:3000/recipes')
+    .then(resp => resp.json())
+    .then(recipes => {
+      this.props.loadRecipes(recipes)
     })
 
     fetch('http://localhost:3000/user_sessions')

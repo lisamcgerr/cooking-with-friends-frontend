@@ -21,5 +21,7 @@ export const LOAD_COMMENTS = 'LOAD_COMMENTS'
 
 export const LOGOUT = 'LOGOUT'
 
+export const DELETE_COOKING_SESSION = 'DELETE_COOKING_SESSION'
+
 
 

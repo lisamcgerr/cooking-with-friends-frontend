@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loadCookingSessions, createUserSession, joinAClass, currentUser, createCookingSession, createUserCookingSession } from '../actions/index'
+import { deleteCookingSession, loadCookingSessions, createUserSession, joinAClass, currentUser, createCookingSession, createUserCookingSession } from '../actions/index'
 import { Card, Icon, Button, Grid, Header } from 'semantic-ui-react'
 //import UserCard from './UserCard'
 
@@ -20,6 +20,16 @@ class AllClasses extends React.Component {
     ))
   }
 
+  handleDelete = (e) => {
+    const id = parseInt(e.target.id)
+    fetch(`http://localhost:3000/cooking_sessions/${id}`, {method: 'DELETE'})
+    .then(resp => resp.json())
+    .then(cookingSession => {
+      alert(cookingSession.message)
+        this.props.deleteCookingSession(id)
+    })
+  }
+
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
 
@@ -30,7 +40,7 @@ class AllClasses extends React.Component {
                 <span className='date'>{csObj.date.toLocaleString('en-us', 'long')}</span>
               </Card.Meta>
               <Card.Description>
-        
+            {csObj.host_id === this.props.auth.id ? <Button color='red' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
@@ -125,7 +135,8 @@ const mapDispatchToProps = {
     createUserSession: createUserSession,
     createCookingSession: createCookingSession,
     currentUser: currentUser,
-    createUserCookingSession: createUserCookingSession
+    createUserCookingSession: createUserCookingSession,
+    deleteCookingSession: deleteCookingSession
 }
 
 
