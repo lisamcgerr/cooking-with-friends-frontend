@@ -1,16 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Grid } from 'semantic-ui-react'
+import { Card, Icon } from 'semantic-ui-react'
+import Grid from '@material-ui/core/Grid'
+
+
 
 class MyClassesCard extends React.Component {
     render(){
         return(
-          <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
+      
+          <Grid item xs={3}>
             <Card>
             <Card.Content>
-              <Card.Header>{this.props.cookingSession.title}</Card.Header>
-              <Card.Meta>
-                <span className='date'>{this.props.cookingSession.date}</span>
+              <Card.Header textAlign='center' >{this.props.cookingSession.title}</Card.Header>
+              <Card.Meta textAlign='center'>
+                <span>{this.props.cookingSession.date}</span>
               </Card.Meta>
               <Card.Description>
                          
@@ -24,7 +28,8 @@ class MyClassesCard extends React.Component {
               </>
             </Card.Content>
           </Card>
-          </Grid.Row>
+          </Grid>
+  
         )
     }
 }

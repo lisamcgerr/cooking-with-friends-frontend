@@ -15,6 +15,7 @@ class Navbar extends React.Component {
         return(
           
                 <Menu textAlign="center" size='large' >
+                    <h3 classname='navbar-title'>Cooking with Friends</h3>
                     <Link to="/">
                         <Menu.Item
                         

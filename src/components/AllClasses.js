@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteCookingSession, loadCookingSessions, createUserSession, joinAClass, currentUser, createCookingSession, createUserCookingSession } from '../actions/index'
-import { Card, Icon, Button, Grid, Header } from 'semantic-ui-react'
-//import UserCard from './UserCard'
+import { Card, Icon, Button, Header } from 'semantic-ui-react'
+import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
 
 class AllClasses extends React.Component {
 
@@ -46,20 +47,20 @@ class AllClasses extends React.Component {
 
     renderAllClasses = () => {
         return this.props.cooking_sessions.map(csObj => (
-          <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
+          <Grid textAlign='center' item xs={3}>
             <Card>
             <Card.Content>
-              <Card.Header>{csObj.title}</Card.Header>
-              <Card.Meta>
-                <span className='date'>{csObj.date}</span>
-                <p><Icon name='user' /> Host: {this.renderHost(csObj.host_id)}</p>
+              <Card.Header textAlign='center' >{csObj.title}</Card.Header>
+              <Card.Meta textAlign='center' >
+                <span textAlign='center' className='date'>{csObj.date}</span>
+                <p textAlign='center' ><Icon name='user' /> Host: {this.renderHost(csObj.host_id)}</p>
               </Card.Meta>
-              <Card.Description>
-            {csObj.host_id === this.props.auth.id ? <Button color='red' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}
+              <Card.Description textAlign='center' >
+            {csObj.host_id === this.props.auth.id ? <Button color='grey' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}
               </Card.Description>
             </Card.Content>
-            <Card.Content extra>
-              <strong>Users joining cooking session:</strong>
+            <Card.Content extra  textAlign='center' >
+              <strong> Users in Cooking Class </strong>
               <br></br>
               <br></br>
               {csObj.users.map(user => (
@@ -68,11 +69,11 @@ class AllClasses extends React.Component {
 
           {/* {this.props.users.filter(user => (user.id === parseInt(csObj.host_id) <p>{user.username}</p>))} */}
 
-            <Button color='green' id={csObj.id} onClick={this.handleClick}>Join Cooking Class</Button>
+            <Button color='teal' id={csObj.id} onClick={this.handleClick}>Join Cooking Class</Button>
             </Card.Content>
            
           </Card>
-        </Grid.Row>
+        </Grid>
         ))
     }
 
@@ -125,22 +126,20 @@ class AllClasses extends React.Component {
     }
 
     render(){
+
         return(
-            <div>
-              <Grid divided='vertically' textAlign='center'>
-               <Grid.Row columns={1} >
-                  <Header as='h1' color='green' textAlign='center'>
+            <div flexGrow={1}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                <Header as='h1' color='grey' textAlign='center'>
                     <br></br>
-                   Cooking Classes
+                   All Cooking Classes
+                   <br></br>
                   </Header>
-                
-                    <Grid.Column style={{ marginLeft: '275px', height: '100vh', paddingTop: '50px' }}>
-                      <Card.Group itemsPerRow={1} >
-                    {this.renderAllClasses()}
-                    </Card.Group>
-                    </Grid.Column>
-                    </Grid.Row>
                 </Grid>
+                <Divider />
+                  {this.renderAllClasses()}
+              </Grid>
             </div>
         )
     }

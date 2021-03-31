@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import { Icon } from 'semantic-ui-react'
-import { Card, Image, Icon, Grid, Header, Button } from 'semantic-ui-react'
+import { Card, Image, Icon, Header, Button } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
-import '../App.css'
+import Grid from '@material-ui/core/Grid'
+
 
 
 class RecipeCard extends React.Component {
@@ -57,36 +57,36 @@ handleToggleComments = () => {
         return(
 
 
-        <Grid.Row style={{ textAlign: 'center', width: '23%', padding: "10px" }}>
+        <Grid textAlign='center' item xs={3}>
                 <Card className="card" >
                     <Image src={this.props.recipe.image} wrapped ui={false} />
-                    <Card.Content>
-                    <Card.Header>{this.props.recipe.name}</Card.Header>
+                    <Card.Content textAlign='center'>
+                    <Card.Header textAlign='center'>{this.props.recipe.name}</Card.Header>
                     <Card.Meta>
                         <span className='date'>{this.props.recipe.prep_time}</span>
                     </Card.Meta>
-                    <Card.Description>
+                    <Card.Description textAlign='center'>
                     {this.props.recipe.description}
                     </Card.Description>
                     <br></br>
-                    <Card.Description>
+                    <Card.Description textAlign='center'>
                         <a href={this.props.recipe.recipe_link} target='blank'><strong>Recipe Ingredients and Directions Linked Here</strong></a>
                     </Card.Description>
                     </Card.Content>
-                    <Card.Content extra>
+                    <Card.Content textAlign='center' extra>
                     <>
                         <Icon name='heart' /> {this.props.recipe.likes} likes <Button color='green'  id={this.props.recipe.id} onClick={this.handleLikes}> Like </Button>
                     </>
                     <br></br>
                     </Card.Content>
-                    <Header as='h3' dividing>
-                        <Button onClick={this.handleToggleComments} >Display Comments</Button>
+                    <Header textAlign='center' as='h3' dividing>
+                        <Button textAlign='center' onClick={this.handleToggleComments} >Display Comments</Button>
                     </Header>
                         {this.state.showComments ? this.renderComments() : null}
                         <br></br>
                 </Card>
 
-        </Grid.Row>
+        </Grid>
 
         
 

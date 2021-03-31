@@ -1,8 +1,10 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
 import { connect } from 'react-redux'
-import { Grid, Header, Card} from 'semantic-ui-react'
+import { Header, Card} from 'semantic-ui-react'
 import '../App.css'
+import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
 
 
 
@@ -20,21 +22,20 @@ class RecipeContainer extends React.Component {
 
     render(){
         return(
-          <div class="ui center aligned middle aligned grid" >
-             <Grid divided='vertically' textAlign='center'>
-               <Grid.Row columns={1} >
-                  <Header as='h1' color='green' textAlign='center'>
-                    <br></br>
+          <div className='recipes-container' flexGrow={1} >
+             <Grid container spacing={3} textAlign='center'>
+              <Grid item xs={12}>
+                <Header as='h1' color='grey' textAlign='center'>
+                  <br></br>
                    Recipes
-                  </Header>
-                
-                    <Grid.Column style={{ marginLeft: '275px', height: '100vh', paddingTop: '50px' }}>
-                      <Card.Group itemsPerRow={1} >
+                </Header>
+              </Grid>
+                <Divider />
+   
                     {this.renderRecipes()}
-                    </Card.Group>
-                    </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+
+                   
+            </Grid>
           </div>
 
         )

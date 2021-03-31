@@ -1,56 +1,14 @@
-/* 
-body {
-  margin: 0;
-  font-family: monospace;
+ .profile-page {
+  margin-left: 80px;
+  color: grey;
 }
 
-.container {
-margin: 2rem;
-       display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+.profile-pic {
+  margin-left: 80px;
+  color: grey;
 }
-
-.card {
-  text-align: center;
-  grid-column-end: auto;
-  border: grey solid 1px;
-  padding: 1rem;
-  width: 15rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 3px 4px #e04b52
-}
-
-#collection {
-  margin: 4rem;
-}
-
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 500px;
-
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-} */
 
 body {
-  margin: 0;
-  font-family: 'Merriweather', serif;
+  margin-left: 80px;
+  background: black;
 }

@@ -1,8 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MyClassesCard from './MyClasses'
-import { Grid, Header, Card, Image} from 'semantic-ui-react'
+import { Header, Image} from 'semantic-ui-react'
 import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
+import '../App.css'
+
 
 
 class MyClassesContainer extends React.Component {
@@ -19,35 +22,33 @@ class MyClassesContainer extends React.Component {
 
     render(){
         return(
-        <>  
-        <Grid as='h1' color='green' textAlign='center'>
-                {this.props.auth.first_name} {this.props.auth.last_name}'s Dashboard
-        </Grid>   
-        <Grid marginLeft= '275px' paddingTop='50px'as='h2' color='green' >
-        <Image circular textAlign='center' src={this.props.auth.image} size='large' /> 
-        <br></br>
-                username: {this.props.auth.username}
-        </Grid>     
-        <Header marginLeft= '275px' paddingTop='50px'as='h3' color='green' >
-                bio: {this.props.auth.bio}
-        </Header>  
-            <div class="ui center aligned middle aligned grid" >
-            <Grid divided='vertically' textAlign='center'>
-              <Grid.Row columns={1} >
-                 <Header as='h1' color='green' textAlign='center'>
-                   <br></br>
-                  Upcoming Cooking Classes
-                 </Header>
-               
-                   <Grid.Column style={{ marginLeft: '275px', height: '100vh', paddingTop: '50px' }}>
-                     <Card.Group itemsPerRow={1} >
+        <div flexGrow={1} >   
+            <Grid container spacing={3} textAlign='center'>
+                <Grid item xs={12}>
+                    <Header as='h1' color='grey' textAlign='center' paddingBottom='50px'>
+                        <br></br>
+                        {this.props.auth.first_name} {this.props.auth.last_name}'s Dashboard
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                    </Header>
+                </Grid>
+                    <Divider />
+                
+                <Grid className='profile-page 'item xs={4} >
+                    <Image circular textAlign='center' src={this.props.auth.image} size='medium' className='profile-pic' /> 
+                    <br></br>
+                    <br></br>
+                    <h2 className='profile-page'>{this.props.auth.username} </h2>
+                    <h3 className='profile-page'>{this.props.auth.bio}</h3>
+                </Grid>
+
+                <Grid container xs={8} spacing={3} textAlign='center'>
                    {this.renderMyClasses()}
-                   </Card.Group>
-                   </Grid.Column>
-                   </Grid.Row>
-               </Grid>
-         </div>
-         </>
+                </Grid>
+            </Grid>
+        </div>
+    
         )
     }
 }

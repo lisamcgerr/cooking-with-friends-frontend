@@ -34,7 +34,7 @@ class ClassForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const id = this.props.auth.id
-        const newCookingSession = {...this.state, host_id: id}
+        const newCookingSession = {...this.state, host_id: this.props.auth.id}
 
         const reqObj = {
             method: 'POST',
@@ -73,8 +73,7 @@ class ClassForm extends React.Component {
               .then(resp => resp.json())
               .then(data => {
                 this.props.currentUser(data)
-    
-                this.props.history.push('/myclasses')
+                this.props.history.push('/profile')
               })
 
         } else {

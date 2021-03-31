@@ -23,15 +23,14 @@ class RecipeCommentCard extends React.Component {
     render(){
         return(
             <div>
-                  <Comment.Group minimal>
-                        <Comment>
-                        {/* <Comment.Avatar as='a' src="https://user-images.githubusercontent.com/73184313/112050087-726da480-8b1e-11eb-884e-ec03154a1980.png"/> */}
-                        <Comment.Content>
-                            <Comment.Author as='a'><Icon name='user'/>{this.renderUser(this.props.comment.user_id)}</Comment.Author><br></br>
-                            <Comment.Metadata>
+                  <Comment.Group minimal textAlign='center'>
+                        <Comment textAlign='center'>
+                        <Comment.Content textAlign='center'>
+                            <Comment.Author textAlign='center' as='a'><Icon name='user'/>  {this.renderUser(this.props.comment.user_id)}</Comment.Author><br></br>
+                            <Comment.Metadata textAlign='center'>
                             <span>{this.props.comment.created}</span>
                             </Comment.Metadata>
-                            <Comment.Text>{this.props.comment.post}</Comment.Text>
+                            <Comment.Text>  {this.props.comment.post}</Comment.Text>
                         </Comment.Content>
                         </Comment>
                     </Comment.Group>
