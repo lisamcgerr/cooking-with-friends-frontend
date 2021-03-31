@@ -109,7 +109,9 @@ componentDidUpdate(prevState, _){
     return(
       <div>
         <Navbar />
-        <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112771285-b5cd8480-8ff0-11eb-8775-03cbc7804493.png' width='100%' paddingTop='0' />
+        {/* <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/112771285-b5cd8480-8ff0-11eb-8775-03cbc7804493.png' width='100%' paddingTop='0' /> */}
+        <Image className='cooking-image' src='https://user-images.githubusercontent.com/73184313/113223892-cb8cb500-924f-11eb-9f50-9277d5c94ab0.png' width='100%' paddingTop='0' />
+
           <Switch>
             <Route exact path='/createaclass' component={ClassForm} />
             <Route exact path='/recipes' component={RecipeContainer} />

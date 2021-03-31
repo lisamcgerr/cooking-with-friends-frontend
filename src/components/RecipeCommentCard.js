@@ -22,7 +22,7 @@ class RecipeCommentCard extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className='comments'>
                   <Comment.Group minimal textAlign='center'>
                         <Comment textAlign='center'>
                         <Comment.Content textAlign='center'>

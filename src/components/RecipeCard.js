@@ -59,7 +59,7 @@ handleToggleComments = () => {
 
         <Grid textAlign='center' item xs={3}>
                 <Card className="card" >
-                    <Image src={this.props.recipe.image} wrapped ui={false} />
+                    <Image className='recipe-image' src={this.props.recipe.image} wrapped ui={false} />
                     <Card.Content textAlign='center'>
                     <Card.Header textAlign='center'>{this.props.recipe.name}</Card.Header>
                     <Card.Meta>

@@ -1,35 +1,89 @@
 body {
-
-  background: #fffafa;
+  
+  background: #28313b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 .recipes-container {
-  padding-left: 100px;
+  padding-left: 120px;
 }
 
-.navbar-title {
-  color: blueviolet;
-}
 
 .all-classes-container {
-  padding-left: 50px;
-  padding-right: 20px;
+  padding-left: 120px;
+
 }
 
 .recipes-h1 {
   text-align: center;
+  font-size: 40px;
+  color: azure;
   
 }
 
 .dashboard-h1 {
   text-align: center;
+  color: azure;
+  font-size: 40px;
+
 }
 
+.login-h1 {
+  text-align: center;
+  color: azure;
+  font-size: 40px;
+
+}
+
+.signup-h1 {
+  text-align: center;
+  color: azure;
+  font-size: 40px;
+
+}
 .my-classes-container {
-  padding-left: 25px;
+  padding-left: 50px;
+}
+
+.card {
+  padding-left: 30px;
+}
+
+.recipe-image {
+  opacity: 0.9;
+}
+
+.profile-image {
+  opacity: 0.9;
+}
+
+.navbar {
+  color: azure;
+}
+
+
+.add-a-recipe-h1 {
+  text-align: center;
+  color: azure;
+  font-size: 40px;
+
+}
+
+.all-cooking-classes-h1 {
+  text-align: center;
+  color: azure;
+  font-size: 40px;
+
+}
+
+.cooking-class-form-h1 {
+  text-align: center;
+  color: azure;
+  font-size: 40px;
+
+}
+
+.comments {
+  text-align: center;
 }

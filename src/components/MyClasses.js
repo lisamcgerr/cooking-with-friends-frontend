@@ -134,7 +134,7 @@ renderLink = (recipe_id) => {
       
           <Grid item xs={3}>
             <Card>
-            <Image wrapped ui={false} src={this.renderImage(this.props.cookingSession.recipe_id)} /> 
+            <Image className='recipe-image' wrapped ui={false} src={this.renderImage(this.props.cookingSession.recipe_id)} /> 
             <Card.Content>
               <Card.Header textAlign='center' >{this.props.cookingSession.title}</Card.Header>
               <Card.Meta textAlign='center'>

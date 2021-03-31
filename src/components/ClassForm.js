@@ -91,9 +91,8 @@ class ClassForm extends React.Component {
                 <br></br>
              <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 550 }}>
-                <Header as='h2' color='green' textAlign='center'>
-                   Create a Cooking Class
-                    </Header>
+                <h1 className='cooking-class-form-h1' >Create a Virtual Cooking Class</h1>
+
                 <Form onSubmit={this.handleSubmit} size='large'>
                     <Segment inverted stacked>
                     <Form.Input>

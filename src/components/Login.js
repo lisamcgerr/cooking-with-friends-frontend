@@ -56,9 +56,7 @@ class Login extends React.Component {
                 {this.state.error? <h4 style={{color: 'red'}}> {this.state.error} </h4>: null}
                       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                         <Grid.Column style={{ maxWidth: 550 }}>
-                        <Header as='h2' color='green' textAlign='center'>
-                        Login To Your Account
-                        </Header>
+                        <h1 className='login-h1'>Login</h1>
                         <Form onSubmit={this.handleSubmit} size='large'>
                             <Segment inverted stacked>
                             <Form.Input fluid icon='user' iconPosition='left' name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />

@@ -53,9 +53,7 @@ class Signup extends React.Component {
                 <br></br>
                 <Grid  textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                         <Grid.Column style={{ maxWidth: 550 }}>
-                        <Header as='h1' color='green' textAlign='center'>
-                            Sign Up
-                        </Header>
+                        <h1 className='signup-h1'>Sign Up</h1>
                         <Form onSubmit={this.handleSubmit} inverted size='large'>
                             <Segment inverted stacked>
                             <Form.Input fluid 

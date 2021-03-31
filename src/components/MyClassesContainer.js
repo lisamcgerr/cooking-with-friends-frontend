@@ -23,12 +23,12 @@ class MyClassesContainer extends React.Component {
     render(){
         return(
             <>
-        <h1 clasName='dashboard-h1'> {this.props.auth.first_name} {this.props.auth.last_name}'s Dashboard</h1>
+        <h1 className='dashboard-h1'> {this.props.auth.first_name} {this.props.auth.last_name}'s Home Page</h1><br></br>
         <div flexGrow={1} >   
             <Grid container spacing={3} textAlign='center'>
                 <Grid className='profile-page 'item xs={3} >
                     <Card fluid className='card' >
-                        <Image wrapped ui={false} src={this.props.auth.image} /> 
+                        <Image className='profile-image' wrapped ui={false} src={this.props.auth.image} /> 
                         <Card.Content>
                             <Card.Header textAlign='center' >{this.props.auth.username}</Card.Header>
                                 <Card.Meta textAlign='center' >
@@ -41,7 +41,7 @@ class MyClassesContainer extends React.Component {
                         <Button color='grey'>Edit Profile</Button>
                     </Card>
                 </Grid>
-                <Grid className='my-classes-container' container xs={9} spacing={3} textAlign='center'>
+                <Grid className='my-classes-containery' container xs={9} spacing={3} textAlign='center'>
                    
                    {this.renderMyClasses()}
                 </Grid>

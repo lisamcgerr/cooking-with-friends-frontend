@@ -134,7 +134,7 @@ renderImage = (recipe_id) => {
         return this.props.cooking_sessions.map(csObj => (
           <Grid textAlign='center' item xs={3}>
             <Card>
-            <Image wrapped ui={false} src={this.renderImage(csObj.recipe_id)} /> 
+            <Image className='recipe-image' wrapped ui={false} src={this.renderImage(csObj.recipe_id)} /> 
             <Card.Content>
               <Card.Header textAlign='center' >{csObj.title}</Card.Header>
               <Card.Meta textAlign='center' >
@@ -155,7 +155,7 @@ renderImage = (recipe_id) => {
 
           {/* {this.props.users.filter(user => (user.id === parseInt(csObj.host_id) <p>{user.username}</p>))} */}
 
-            <Button color='teal' id={csObj.id} onClick={this.handleClick}>Join Cooking Class</Button>
+            <Button color='green' id={csObj.id} onClick={this.handleClick}>Join Cooking Class</Button>
             </Card.Content>
            
           </Card>
@@ -217,11 +217,7 @@ renderImage = (recipe_id) => {
             <div className='all-classes-container' flexGrow={1}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
-                <Header as='h1' color='grey' textAlign='center'>
-                    <br></br>
-                   All Cooking Classes
-                   <br></br>
-                  </Header>
+                <h1 className='all-cooking-classes-h1' >All Upcoming Virtual Cooking Classes</h1>
                 </Grid>
                 <Divider />
                   {this.renderAllClasses()}
