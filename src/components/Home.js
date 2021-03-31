@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Header } from 'semantic-ui-react'
+import { Container, Header, Image } from 'semantic-ui-react'
 
 class Home extends React.Component {
     render(){
@@ -8,9 +8,10 @@ class Home extends React.Component {
                 <br></br>
                 <br></br>
                 <Container text>
+                    <Image />
                 <Header as='h2'>Welcome to the Cooking with Friends App</Header>
                 <p>
-                A community connecting people with food! Lets get cooking!
+                The Cooking With Friends App was inspired by 
                 </p>
                 <p>
                 image here ... stattistics about # of users and recipes

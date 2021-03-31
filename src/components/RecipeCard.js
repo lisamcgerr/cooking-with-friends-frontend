@@ -70,7 +70,7 @@ handleToggleComments = () => {
                     </Card.Description>
                     <br></br>
                     <Card.Description textAlign='center'>
-                        <a href={this.props.recipe.recipe_link} target='blank'><strong>Recipe Ingredients and Directions Linked Here</strong></a>
+                        <a href={this.props.recipe.recipe_link} target='blank'><strong>Recipe Link Here</strong></a>
                     </Card.Description>
                     </Card.Content>
                     <Card.Content textAlign='center' extra>

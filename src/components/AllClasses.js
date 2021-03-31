@@ -40,8 +40,30 @@ class AllClasses extends React.Component {
         return 'lisa_loves_cooking'
     } else if (user_id === 4) {
         return 'dexy_loves_eating'
-    } else {
+    } else if (user_id === 5) {
         return 'scarlet_witch'
+    } else if (user_id === 6) {
+        return 'beethoven_stbernard'
+    } else if (user_id === 7 ) {
+        return 'superman'
+    } else if (user_id === 8 ) {
+        return 'batman'
+    } else if (user_id === 9 ) {
+        return 'wonder_woman'
+    } else if (user_id === 10 ) {
+        return 'aquaman'
+    } else if (user_id === 11 ) {
+        return 'cyborg'
+    } else if (user_id === 12 ) {
+        return 'captain_america'
+    } else if (user_id === 13 ) {
+        return 'the_hulk'
+    } else if (user_id === 14 ) {
+        return 'black_widow'
+    } else if (user_id === 15 ) {
+        return 'hawkeye'
+    } else {
+      return 'the_flash'
     }
 }
 
