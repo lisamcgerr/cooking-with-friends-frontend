@@ -22,21 +22,19 @@ class RecipeContainer extends React.Component {
 
     render(){
         return(
+          <>
+          <h1 className='recipes-h1' >Recipes</h1>
           <div className='recipes-container' flexGrow={1} >
              <Grid container spacing={3} textAlign='center'>
               <Grid item xs={12}>
-                <Header as='h1' color='grey' textAlign='center'>
-                  <br></br>
-                   Recipes
-                </Header>
               </Grid>
                 <Divider />
    
                     {this.renderRecipes()}
 
-                   
             </Grid>
           </div>
+          </>
 
         )
     }

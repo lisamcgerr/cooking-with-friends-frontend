@@ -95,9 +95,9 @@ renderImage = (recipe_id) => {
   } else if (recipe_id === 13 ) {
       return 'https://user-images.githubusercontent.com/73184313/112768183-5c5d5980-8fe0-11eb-8859-ff57dd750aad.jpeg'
   } else if (recipe_id === 14 ) {
-      return 'black_widowhttps://user-images.githubusercontent.com/73184313/112768227-9b8baa80-8fe0-11eb-92e2-127fc1fce23b.jpeg'
+      return 'https://user-images.githubusercontent.com/73184313/112768227-9b8baa80-8fe0-11eb-92e2-127fc1fce23b.jpeg'
   } else if (recipe_id === 15 ) {
-      return 'hawkeyehttps://user-images.githubusercontent.com/73184313/112768261-d68dde00-8fe0-11eb-8d8e-aa5ea601fd85.jpeg'
+      return 'https://user-images.githubusercontent.com/73184313/112768261-d68dde00-8fe0-11eb-8d8e-aa5ea601fd85.jpeg'
   } else if (recipe_id === 16 ) {
       return 'https://user-images.githubusercontent.com/73184313/112768330-3dab9280-8fe1-11eb-8d89-e38c3cf6c201.jpeg'
   } else if (recipe_id === 17 ) {
@@ -115,7 +115,7 @@ renderImage = (recipe_id) => {
   } else if (recipe_id === 23 ) {
       return 'https://user-images.githubusercontent.com/73184313/112768667-a9dac600-8fe2-11eb-9db6-cc77f6fd87e8.jpeg'
   } else if (recipe_id === 24 ) {
-        return 'https://user-images.githubusercontent.com/73184313/112768694-d42c8380-8fe2-11eb-8b63-cc94dd91f738.jpeg'
+      return 'https://user-images.githubusercontent.com/73184313/112768694-d42c8380-8fe2-11eb-8b63-cc94dd91f738.jpeg'
   } else if (recipe_id === 25 ) {
       return 'https://user-images.githubusercontent.com/73184313/112768729-076f1280-8fe3-11eb-872d-a19d165c007f.jpeg'
   } else if (recipe_id === 26 ) {
@@ -126,6 +126,8 @@ renderImage = (recipe_id) => {
       return 'https://user-images.githubusercontent.com/73184313/112768847-92500d00-8fe3-11eb-8cd3-818dd2fba0bb.jpeg'
   }
 }
+
+
 
 
     renderAllClasses = () => {
@@ -212,7 +214,7 @@ renderImage = (recipe_id) => {
     render(){
 
         return(
-            <div flexGrow={1}>
+            <div className='all-classes-container' flexGrow={1}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
                 <Header as='h1' color='grey' textAlign='center'>

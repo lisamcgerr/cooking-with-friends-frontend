@@ -67,6 +67,66 @@ class MyClassesCard extends React.Component {
     }
 }
 
+renderLink = (recipe_id) => {
+  if (recipe_id === 1 ) {
+      return 'https://www.tasteofhome.com/recipes/quick-chicken-piccata/'
+  } else if (recipe_id === 2) {
+      return 'https://www.tasteofhome.com/recipes/enchilada-casser-ole/'
+  } else if (recipe_id === 3) {
+      return 'https://www.tasteofhome.com/recipes/favorite-chicken-potpie/'
+  } else if (recipe_id === 4) {
+      return 'https://www.tasteofhome.com/recipes/classic-beef-stew/'
+  } else if (recipe_id === 5) {
+      return 'https://www.tasteofhome.com/recipes/zucchini-pizza-casserole/'
+  } else if (recipe_id === 6) {
+      return 'https://www.tasteofhome.com/recipes/pan-roasted-chicken-and-vegetables/'
+  } else if (recipe_id === 7 ) {
+      return 'https://www.tasteofhome.com/recipes/pork-chops-with-scalloped-potatoes/'
+  } else if (recipe_id === 8 ) {
+      return 'https://www.tasteofhome.com/recipes/lime-chicken-tacos/'
+  } else if (recipe_id === 9 ) {
+      return 'https://www.tasteofhome.com/recipes/flavorful-pot-roast/'
+  } else if (recipe_id === 10 ) {
+      return 'https://www.tasteofhome.com/recipes/asian-beef-and-noodles/'
+  } else if (recipe_id === 11 ) {
+      return 'https://www.tasteofhome.com/recipes/li-l-cheddar-meat-loaves/'
+  } else if (recipe_id === 12 ) {
+      return 'https://www.tasteofhome.com/recipes/garlic-beef-enchiladas/'
+  } else if (recipe_id === 13 ) {
+      return 'https://www.tasteofhome.com/recipes/skillet-mac-cheese/'
+  } else if (recipe_id === 14 ) {
+      return 'https://www.tasteofhome.com/recipes/chicken-and-dumplings/'
+  } else if (recipe_id === 15 ) {
+      return 'https://www.tasteofhome.com/recipes/cabbage-roll-casserole/'
+  } else if (recipe_id === 16 ) {
+      return 'https://www.tasteofhome.com/recipes/parmesan-chicken/'
+  } else if (recipe_id === 17 ) {
+      return 'https://www.tasteofhome.com/recipes/firecracker-casserole/'
+  } else if (recipe_id === 18 ) {
+      return 'https://www.tasteofhome.com/recipes/favorite-baked-spaghetti/'
+  } else if (recipe_id === 19 ) {
+      return 'https://www.tasteofhome.com/recipes/chicken-zucchini-casserole/'
+  } else if (recipe_id === 20 ) {
+      return 'https://www.tasteofhome.com/recipes/brown-sugar-glazed-salmon/'
+  } else if (recipe_id === 21 ) {
+      return 'https://www.tasteofhome.com/recipes/chicken-noodle-casserole/'
+  } else if (recipe_id === 22 ) {
+      return 'https://www.tasteofhome.com/recipes/southwestern-casserole/'
+  } else if (recipe_id === 23 ) {
+      return 'https://www.tasteofhome.com/recipes/melt-in-your-mouth-chuck-roast/'
+  } else if (recipe_id === 24 ) {
+      return 'https://www.tasteofhome.com/recipes/best-lasagna/'
+  } else if (recipe_id === 25 ) {
+      return 'https://www.tasteofhome.com/recipes/basil-pork-chops/'
+  } else if (recipe_id === 26 ) {
+      return 'https://www.tasteofhome.com/recipes/shrimp-tortellini-pasta-toss/'
+  } else if (recipe_id === 27 ) {
+      return 'https://www.tasteofhome.com/recipes/mom-s-swedish-meatballs/'
+  } else {
+      return 'https://www.tasteofhome.com/recipes/potato-kielbasa-skillet/'
+  }
+}
+
 
 
     render(){
@@ -80,15 +140,17 @@ class MyClassesCard extends React.Component {
               <Card.Meta textAlign='center'>
                 <span>{this.props.cookingSession.date}</span>
               </Card.Meta>
-              <Card.Description>
-                         
+              <Card.Description textAlign='center'>
+              <a href={this.renderLink(this.props.cookingSession.recipe_id)} target='blank'><strong>Recipe Link Here</strong></a><br></br>
               </Card.Description>
             </Card.Content>
-            <Card.Content extra>
+            <Card.Content extra textAlign='center'>
               <>
                 {/* {this.props.cookingSession.users.map(user => (
                   <p><Icon name='user' />{user.username}</p>
               ))} */}
+              <a href='https://flatironschool.zoom.us/j/94771026740?pwd=WThoSTdkVnArVTQ1d29KVnhIdVdqUT09#success' target='blank'><strong> Zoom Room Link Here</strong></a>
+
               </>
             </Card.Content>
           </Card>

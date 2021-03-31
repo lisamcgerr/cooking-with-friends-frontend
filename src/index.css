@@ -9,10 +9,27 @@ code {
 }
 
 .recipes-container {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 100px;
 }
 
 .navbar-title {
   color: blueviolet;
+}
+
+.all-classes-container {
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.recipes-h1 {
+  text-align: center;
+  
+}
+
+.dashboard-h1 {
+  text-align: center;
+}
+
+.my-classes-container {
+  padding-left: 25px;
 }

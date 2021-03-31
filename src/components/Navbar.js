@@ -16,11 +16,11 @@ class Navbar extends React.Component {
           
                 <Menu secondary >
                    
-                    <Link to="/">
+                    {/* <Link to="/">
                         <Menu.Item
                         
                         name='Home'/>
-                    </Link>
+                    </Link> */}
 
                     <Link to="/recipes">
                         <Menu.Item
