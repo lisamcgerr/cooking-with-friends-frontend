@@ -13,6 +13,9 @@ function authReducer(state = null, action)
                 email: action.user.email,
                 bio: action.user.bio,
                 image: action.user.image }
+                // remove more components in the reducer
+                // user_cs: action.user.cooking_sessions,
+                // user_us: action.user.user_sessions }
         case LOGOUT:
             return null
         default:

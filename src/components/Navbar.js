@@ -14,8 +14,8 @@ class Navbar extends React.Component {
     render(){
         return(
           
-                <Menu textAlign="center" size='large' >
-                    <h3 classname='navbar-title'>Cooking with Friends</h3>
+                <Menu secondary >
+                   
                     <Link to="/">
                         <Menu.Item
                         
@@ -52,15 +52,17 @@ class Navbar extends React.Component {
                         name='Profile'/>
                     </Link>
 
+                    <Menu.Menu position='right'>
                     <Link to="/login">
-                       <Menu.Item
+                       <Menu.Item 
                         name={this.props.auth ? 'Logout': 'Login'} onClick={this.handleLogOut}/>
                     </Link>
 
                     <Link to="/signup">
-                        <Menu.Item
+                        <Menu.Item 
                         name='Sign Up'/>
                     </Link>
+                    </Menu.Menu>
                     
                 </Menu>
            

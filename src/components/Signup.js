@@ -54,7 +54,7 @@ class Signup extends React.Component {
                 <Grid  textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                         <Grid.Column style={{ maxWidth: 550 }}>
                         <Header as='h1' color='green' textAlign='center'>
-                            Create a new account
+                            Sign Up
                         </Header>
                         <Form onSubmit={this.handleSubmit} inverted size='large'>
                             <Segment inverted stacked>

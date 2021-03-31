@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MyClassesCard from './MyClasses'
-import { Header, Image} from 'semantic-ui-react'
+import { Header, Image, Card} from 'semantic-ui-react'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
 import '../App.css'
@@ -35,15 +35,22 @@ class MyClassesContainer extends React.Component {
                 </Grid>
                     <Divider />
                 
-                <Grid className='profile-page 'item xs={4} >
-                    <Image circular textAlign='center' src={this.props.auth.image} size='medium' className='profile-pic' /> 
-                    <br></br>
-                    <br></br>
-                    <h2 className='profile-page'>{this.props.auth.username} </h2>
-                    <h3 className='profile-page'>{this.props.auth.bio}</h3>
+                <Grid className='profile-page 'item xs={3} >
+                    <Card className='card' >
+                        <Image wrapped ui={false} src={this.props.auth.image} /> 
+                        <Card.Content>
+                            <Card.Header>{this.props.auth.username}</Card.Header>
+                                <Card.Meta>
+                                <span className='date'>Joined in 2021</span>
+                                </Card.Meta>
+                                    <Card.Description>
+                                        {this.props.auth.bio}
+                                    </Card.Description>
+                        </Card.Content>
+                    </Card>
                 </Grid>
 
-                <Grid container xs={8} spacing={3} textAlign='center'>
+                <Grid container xs={9} spacing={3} textAlign='center'>
                    {this.renderMyClasses()}
                 </Grid>
             </Grid>

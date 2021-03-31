@@ -11,7 +11,7 @@ class Home extends React.Component {
                     <Image />
                 <Header as='h2'>Welcome to the Cooking with Friends App</Header>
                 <p>
-                The Cooking With Friends App was inspired by 
+                The Cooking With Friends App was inspired by quarantine. Cooking with Friends 
                 </p>
                 <p>
                 image here ... stattistics about # of users and recipes
