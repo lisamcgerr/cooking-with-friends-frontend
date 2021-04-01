@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MyClassesCard from './MyClasses'
-import { Header, Image, Card, Button } from 'semantic-ui-react'
+import { Segment, Statistic, Image, Card, Button } from 'semantic-ui-react'
 import Grid from '@material-ui/core/Grid'
-import Divider from '@material-ui/core/Divider'
 import '../App.css'
 
 
@@ -41,7 +40,9 @@ class MyClassesContainer extends React.Component {
                         <Button color='grey'>Edit Profile</Button>
                     </Card>
                 </Grid>
+                
                 <Grid className='my-classes-containery' container xs={9} spacing={3} textAlign='center'>
+                    
                    
                    {this.renderMyClasses()}
                 </Grid>
@@ -56,6 +57,7 @@ class MyClassesContainer extends React.Component {
 function mapStateToProps(state){
     return {
         user_cooking_sessions: state.user_cooking_sessions,
+        cooking_sessions: state.cooking_sessions,
         auth: state.auth
     }
 }
