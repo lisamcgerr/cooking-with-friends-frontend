@@ -138,7 +138,7 @@ renderImage = (recipe_id) => {
             <Card.Content>
               <Card.Header textAlign='center' >{csObj.title}</Card.Header>
               <Card.Meta textAlign='center' >
-                <span textAlign='center' className='date'>{csObj.date}</span>
+                <span textAlign='center' className='date'>{csObj.time}</span>
                 <p textAlign='center' ><Icon name='user' /> Host: {this.renderHost(csObj.host_id)}</p>
               </Card.Meta>
               <Card.Description textAlign='center' >

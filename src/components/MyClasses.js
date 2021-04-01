@@ -138,7 +138,7 @@ renderLink = (recipe_id) => {
             <Card.Content>
               <Card.Header textAlign='center' >{this.props.cookingSession.title}</Card.Header>
               <Card.Meta textAlign='center'>
-                <span>{this.props.cookingSession.date}</span>
+                <span>{this.props.cookingSession.time}</span>
               </Card.Meta>
               <Card.Description textAlign='center'>
               <a href={this.renderLink(this.props.cookingSession.recipe_id)} target='blank'><strong>Recipe Link Here</strong></a><br></br>

@@ -2,12 +2,12 @@ import React from 'react'
 //import { Button, Form } from 'semantic-ui-react'
 import { Button, Form, Grid, Header, Segment} from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { createCookingSession, createUserSession, loadSessions, currentUser } from '../actions'
+import { addCreated, createCookingSession, createUserSession, loadSessions, currentUser } from '../actions'
 
 class ClassForm extends React.Component {
     state = {
         title: '',
-        date: '',
+        time: '',
         meeting_link: '',
         recipe_id: '',
        
@@ -47,9 +47,29 @@ class ClassForm extends React.Component {
         fetch('http://localhost:3000/cooking_sessions', reqObj)
         .then(resp => resp.json())
         .then(newCookingSession => {
+
             console.log('data new cooking session', newCookingSession)
             this.props.createCookingSession(newCookingSession)
+
+            //check controller and 
+
+            // const reqObj = {
+            //     method: 'PATCH',
+            //     headers: {
+            //       'Content-Type': 'application/json'
+            //     },
+            //     body:  JSON.stringify({created: newCookingSession.created})
+            // }
+            // fetch(`http://localhost:3000/cooking_sessions/${newCookingSession.id}`)
+            // .then(resp => resp.json())
+            // .then(data => {
+            //   this.props.addCreated(data)
+            // })  
+
+
         })
+
+
     }
 
 
@@ -60,6 +80,7 @@ class ClassForm extends React.Component {
             .then(user_sessions => {
               this.props.loadSessions(user_sessions)
             })  
+
             
             const token = localStorage.getItem('myAppToken')
 
@@ -102,7 +123,7 @@ class ClassForm extends React.Component {
 
                     <Form.Input>
                         
-                        <input name='date' type= 'datetime-local' value={this.state.date} onChange={this.handleChange} />
+                        <input name='time' type= 'text' placeholder='date and time' value={this.state.time} onChange={this.handleChange} />
                     </Form.Input>
 
                     <Form.Input>
@@ -143,7 +164,8 @@ const mapDispatchToProps = {
     createCookingSession: createCookingSession,
     createUserSession: createUserSession,
     loadSessions: loadSessions,
-    currentUser: currentUser
+    currentUser: currentUser,
+    addCreated: addCreated
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClassForm)

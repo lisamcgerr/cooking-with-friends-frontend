@@ -20,6 +20,7 @@ export const JOIN_A_CLASS = 'JOIN_A_CLASS'
 export const LOAD_COMMENTS = 'LOAD_COMMENTS'
 
 export const LOGOUT = 'LOGOUT'
+export const ADD_CREATED = 'ADD_CREATED'
 
 export const DELETE_COOKING_SESSION = 'DELETE_COOKING_SESSION'
 

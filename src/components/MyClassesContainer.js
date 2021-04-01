@@ -32,7 +32,7 @@ class MyClassesContainer extends React.Component {
                         <Card.Content>
                             <Card.Header textAlign='center' >{this.props.auth.username}</Card.Header>
                                 <Card.Meta textAlign='center' >
-                                <span className='date'>{this.props.auth.email}</span>
+                                <span >{this.props.auth.email}</span>
                                 </Card.Meta>
                                     <Card.Description textAlign='center' >
                                         {this.props.auth.bio}
