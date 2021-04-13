@@ -5,8 +5,8 @@ import { loginSuccess } from '../actions/index'
 
 class Login extends React.Component {
     state = {
-        username: 'dexy_loves_eating',
-        password: 'cooking2020',
+        username: '',
+        password: '',
         error: ''
     }
 

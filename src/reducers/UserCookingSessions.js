@@ -7,9 +7,9 @@ function userCookingSessionsReducer(state = null, action)
         case CURRENT_USER:   
             return action.user.cooking_sessions
         case CREATE_COOKING_SESSION:   
-            return [action.cooking_session, ...state]
+            return [...state, action.cooking_session]
         case CREATE_USER_COOKING_SESSION:   
-            return [action.cooking_session, ...state]
+            return [...state, action.cooking_session]
         case DELETE_COOKING_SESSION:
             return state.filter(cs => cs.id !== action.id)
         case LOGOUT:

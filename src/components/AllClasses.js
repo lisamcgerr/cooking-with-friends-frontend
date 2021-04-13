@@ -142,7 +142,7 @@ renderImage = (recipe_id) => {
                 <p textAlign='center' ><Icon name='user' /> Host: {this.renderHost(csObj.host_id)}</p>
               </Card.Meta>
               <Card.Description textAlign='center' >
-            {csObj.host_id === this.props.auth.id ? <Button color='grey' id={csObj.id} onClick={this.handleDelete}>Delete</Button> : null}
+            {csObj.host_id === this.props.auth.id ? <Button color='grey' id={csObj.id} onClick={this.handleDelete}>Cancel Class</Button> : null}
               </Card.Description>
             </Card.Content>
             <Card.Content extra  textAlign='center' >

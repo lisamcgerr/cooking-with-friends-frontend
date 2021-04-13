@@ -6,7 +6,7 @@ function recipesReducer(state = [], action)
         case LOAD_RECIPES:
             return action.recipes
         case ADD_RECIPE:
-            return [action.recipe, ...state]
+            return [...state, action.recipe]
         case LIKE_RECIPE:
             return state.map(r => {
                 if (r.id === action.recipe.id){
