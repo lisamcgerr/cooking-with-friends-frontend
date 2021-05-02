@@ -12,7 +12,6 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ClassForm from './ClassForm'
 import { Image } from 'semantic-ui-react'
-//import 'bootstrap/dist/css/bootstrap.min.css'
 import AllClasses from './AllClasses'
 import {  currentUser, 
           loadCookingSessions, 

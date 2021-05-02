@@ -12,7 +12,8 @@ class About extends React.Component {
                 <Container text>
                 <Header as='h2'>This is the About Page</Header>
                 <p>
-                Inspired by virtually distanced dinners - never eat alone
+                Inspired by virtually distanced dinners, being all too familiar with eating alone during the COVID-19 pandemic. Cooking with Friends allows users to search a list
+                of recipes or upload one 
                 </p>
                 <p>
                 images 
