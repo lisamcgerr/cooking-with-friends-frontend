@@ -14,7 +14,7 @@ class Home extends React.Component {
                 The Cooking With Friends App was inspired by quarantine. Cooking with Friends 
                 </p>
                 <p>
-                image here ... stattistics about # of users and recipes
+                image here ... statistics about # of users and recipes
                 </p>
             </Container>
             </div>
