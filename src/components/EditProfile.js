@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Form, Segment, Grid } from 'semantic-ui-react'
+import { updateUser } from '../actions/index'
+
 
 
 class EditProfile extends React.Component {
@@ -47,9 +49,11 @@ class EditProfile extends React.Component {
     render(){
         return(
             <div>
+                <br>
+                </br>
                 <Grid  textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                         <Grid.Column style={{ maxWidth: 550 }}>
-                        <h1 className='signup-h1'>Sign Up</h1>
+                        <h1 className='signup-h1'>Edit Profile</h1>
                         <Form onSubmit={this.handleSubmit} inverted size='large'>
                             <Segment inverted stacked>
                             <Form.Input fluid 
@@ -109,18 +113,17 @@ class EditProfile extends React.Component {
                                 placeholder='...write your bio here' />
                             </Form.Input>    
 
-                            <Form.Input fluid >
-                                <textarea icon='image' 
+                            <Form.Input fluid 
+                                icon='user' 
                                 iconPosition='left' 
                                 name='image'   
                                 type='text'            
                                 value={this.state.image} 
                                 onChange={this.handleChange}  
                                 placeholder='image' />
-                            </Form.Input>    
                     
                             <Button color='green' fluid size='large'>
-                                Create account
+                                Submit
                             </Button>
                             </Segment>
                         </Form>
@@ -132,7 +135,7 @@ class EditProfile extends React.Component {
 }
 
 const mapDispatchToProps = {
-    addUser: addUser
+    updateUser: updateUser
 }
 
 function mapStateToProps(state){
