@@ -4,6 +4,7 @@ function authReducer(state = null, action)
 {
     switch(action.type) {
         case LOGIN_SUCCESS:
+            
         case CURRENT_USER:   
             return {
                 id: action.user.id,

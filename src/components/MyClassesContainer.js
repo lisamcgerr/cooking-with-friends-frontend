@@ -18,6 +18,11 @@ class MyClassesContainer extends React.Component {
         ))
     }
 
+    handleEdit = (e) => {
+        e.preventDefault()
+        this.props.history.push('/editprofile')
+    }
+
 
     render(){
         return(
@@ -37,7 +42,7 @@ class MyClassesContainer extends React.Component {
                                         {this.props.auth.bio}
                                     </Card.Description>
                         </Card.Content>
-                        <Button color='grey'>Edit Profile</Button>
+                        <Button onClick={this.handleEdit}color='grey'>Edit Profile</Button>
                     </Card>
                 </Grid>
                 

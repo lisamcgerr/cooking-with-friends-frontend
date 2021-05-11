@@ -1,10 +1,10 @@
 import React from 'react'
-//import '../App.css'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
 import Navbar from './Navbar'
+import EditProfile from './EditProfile'
 import RecipeContainer from './RecipeContainer'
 import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
@@ -120,6 +120,7 @@ componentDidUpdate(prevState, _){
             <Route exact path='/' component={Home}/>
             <Route exact path='/recipes/new' component={RecipeForm}/>
             <Route exact path='/allclasses' component={AllClasses}/>
+            <Route exact path='/editprofile' component={EditProfile}/>
           </Switch>
       </div>
     )
