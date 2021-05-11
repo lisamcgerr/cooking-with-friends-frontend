@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Button, Form, Segment, Grid } from 'semantic-ui-react'
 
 
@@ -130,4 +131,14 @@ class EditProfile extends React.Component {
     }
 }
 
-export default EditProfile
+const mapDispatchToProps = {
+    addUser: addUser
+}
+
+function mapStateToProps(state){
+    return {
+        users: state.users
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfile)

@@ -6,6 +6,7 @@ export const LIKE_RECIPE = 'LIKE_RECIPE'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const CURRENT_USER = 'CURRENT_USER'
 export const ADD_USER  = 'ADD_USER'
+export const UPDATE_USER  = 'UPDATE_USER'
 export const LOAD_USERS = 'LOAD_USERS'
 
 export const CREATE_USER_SESSION  = 'CREATE_USER_SESSION'
