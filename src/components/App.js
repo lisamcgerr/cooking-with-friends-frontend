@@ -6,6 +6,7 @@ import Signup from './Signup'
 import Navbar from './Navbar'
 import EditProfile from './EditProfile'
 import RecipeContainer from './RecipeContainer'
+import CreateComment from './CreateComment'
 import MyClassesContainer from './MyClassesContainer'
 import RecipeForm from './RecipeForm'
 import { withRouter } from 'react-router-dom'
@@ -121,6 +122,7 @@ componentDidUpdate(prevState, _){
             <Route exact path='/recipes/new' component={RecipeForm}/>
             <Route exact path='/allclasses' component={AllClasses}/>
             <Route exact path='/editprofile' component={EditProfile}/>
+            <Route exact path='/createcomment' component={CreateComment}/>
           </Switch>
       </div>
     )
