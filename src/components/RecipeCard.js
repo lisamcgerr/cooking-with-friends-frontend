@@ -81,6 +81,10 @@ handleToggleComments = () => {
                     </Card.Content>
                     <Header textAlign='center' as='h3' dividing>
                         <Button textAlign='center' onClick={this.handleToggleComments} >Display Comments</Button>
+                        <br></br>
+                        <br></br>
+                        <Button textAlign='center' onClick={this.handleCreateComment} >Leave Comment</Button>
+
                     </Header>
                         {this.state.showComments ? this.renderComments() : null}
                         <br></br>
