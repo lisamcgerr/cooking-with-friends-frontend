@@ -25,5 +25,8 @@ export const ADD_CREATED = 'ADD_CREATED'
 
 export const DELETE_COOKING_SESSION = 'DELETE_COOKING_SESSION'
 
+export const CREATE_COMMENT  = 'CREATE_COMMENT'
+
+
 
 

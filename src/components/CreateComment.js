@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { createComment } from '../actions/index'
 
 class CreateComment extends React.Component {
     render(){
@@ -10,4 +12,8 @@ class CreateComment extends React.Component {
     }
 }
 
-export default CreateComment
+const mapDispatchToProps = {
+    createComment: createComment
+}
+
+export default connect(null, mapDispatchToProps)(CreateComment)
