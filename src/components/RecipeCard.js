@@ -51,6 +51,11 @@ handleToggleComments = () => {
     })
 }
 
+handleCreateComment = () => {
+    e.preventDefault()
+    this.props.history.push('/createcomment')
+}
+
 
     
     render(){
