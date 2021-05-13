@@ -60,6 +60,7 @@ class CreateComment extends React.Component {
                         placeholder='leave comment here'
                         />
                     </Form>
+                    <Button color='green' fluid size='large'>Submit</Button>
                 </Grid>
             </>
         )
