@@ -10,13 +10,13 @@ class CreateComment extends React.Component {
         recipe_id: ''
     }
 
-    handleInput = (e) => {
-        this.setState({
-            [e.target.post]: e.target.value,
-            user_id: this.props.auth.id,
-            recipe_id: 
-        })
-    }
+    // handleInput = (e) => {
+    //     this.setState({
+    //         [e.target.post]: e.target.value,
+    //         user_id: this.props.auth.id,
+    //         recipe_id: 
+    //     })
+    // }
 
     render(){
         return(
