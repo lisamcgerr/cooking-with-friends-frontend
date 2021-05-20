@@ -8,6 +8,7 @@ export const CURRENT_USER = 'CURRENT_USER'
 export const ADD_USER  = 'ADD_USER'
 export const UPDATE_USER  = 'UPDATE_USER'
 export const LOAD_USERS = 'LOAD_USERS'
+export const DELETE_USER = 'DELETE_USER'
 
 export const CREATE_USER_SESSION  = 'CREATE_USER_SESSION'
 
@@ -26,7 +27,8 @@ export const ADD_CREATED = 'ADD_CREATED'
 export const DELETE_COOKING_SESSION = 'DELETE_COOKING_SESSION'
 
 export const CREATE_COMMENT  = 'CREATE_COMMENT'
-
+export const UPDATE_COMMENT = 'UPDATE_COMMENT'
+export const DELETE_COMMENT = 'DELETE_COMMENT'
 
 
 
