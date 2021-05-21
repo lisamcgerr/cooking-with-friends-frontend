@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
 body {
-  
+  font-family: 'Oswald';
   background: #28313b;
 }
 
@@ -87,3 +89,4 @@ body {
 .comments {
   text-align: center;
 }
+
