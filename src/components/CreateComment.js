@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createComment } from '../actions/index'
-import { Grid, Form, Button } from 'semantic-ui-react'
+import { Grid, Form, Button, Segment } from 'semantic-ui-react'
 
 class CreateComment extends React.Component {
 
@@ -48,8 +48,14 @@ class CreateComment extends React.Component {
     render(){
         return(
             <> 
+                <br></br>
+                <br></br>
+                <br></br>
                 <Grid  textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
+                <Grid.Column style={{ maxWidth: 550 }}>
+                <h1 className='login-h1'>Comment on a Recipe</h1>
                     <Form onSubmit={this.handleSubmit} inverted sixe='large'>
+                    <Segment inverted stacked>
                         <Form.Input fluid 
                         icon = ''
                         iconPosition='left'
@@ -59,8 +65,10 @@ class CreateComment extends React.Component {
                         onChange={this.handleInput}
                         placeholder='leave comment here'
                         />
+                    </Segment> 
                     </Form>
                     <Button color='green' fluid size='large'>Submit</Button>
+                    </Grid.Column>
                 </Grid>
             </>
         )
