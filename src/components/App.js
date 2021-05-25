@@ -59,24 +59,6 @@ class App extends React.Component {
     .then(cooking_sessions => {
       this.props.loadCookingSessions(cooking_sessions)
     })
-
-    // fetch('http://localhost:3000/recipes')
-    // .then(resp => resp.json())
-    // .then(recipes => {
-    //   this.props.loadRecipes(recipes)
-    // })
-
-    // fetch('http://localhost:3000/user_sessions')
-    // .then(resp => resp.json())
-    // .then(user_sessions => {
-    //   this.props.loadSessions(user_sessions)
-    // })
-
-    // fetch('http://localhost:3000/comments')
-    // .then(resp => resp.json())
-    // .then(comments => {
-    //   this.props.loadComments(comments)
-    // })
 }
 
 componentDidUpdate(prevState, _){

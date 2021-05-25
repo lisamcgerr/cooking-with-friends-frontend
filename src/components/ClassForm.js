@@ -1,5 +1,4 @@
 import React from 'react'
-//import { Button, Form } from 'semantic-ui-react'
 import { Button, Form, Grid, Header, Segment} from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addCreated, createCookingSession, createUserSession, loadSessions, currentUser } from '../actions'
@@ -9,8 +8,7 @@ class ClassForm extends React.Component {
         title: '',
         time: '',
         meeting_link: '',
-        recipe_id: '',
-       
+        recipe_id: ''   
     }
 
     handleChange = (e) => {
@@ -50,23 +48,6 @@ class ClassForm extends React.Component {
 
             console.log('data new cooking session', newCookingSession)
             this.props.createCookingSession(newCookingSession)
-
-            //check controller and 
-
-            // const reqObj = {
-            //     method: 'PATCH',
-            //     headers: {
-            //       'Content-Type': 'application/json'
-            //     },
-            //     body:  JSON.stringify({created: newCookingSession.created})
-            // }
-            // fetch(`http://localhost:3000/cooking_sessions/${newCookingSession.id}`)
-            // .then(resp => resp.json())
-            // .then(data => {
-            //   this.props.addCreated(data)
-            // })  
-
-
         })
 
 
@@ -101,8 +82,6 @@ class ClassForm extends React.Component {
             console.log('no')
         }
     }
-
-
 
     render(){
         return(

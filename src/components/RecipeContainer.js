@@ -5,9 +5,7 @@ import { Header, Card} from 'semantic-ui-react'
 import '../App.css'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
-
-
-
+import CreateComment from './CreateComment'
 
 class RecipeContainer extends React.Component {
 
@@ -23,19 +21,17 @@ class RecipeContainer extends React.Component {
     render(){
         return(
           <>
-          <h1 className='recipes-h1' >Recipes</h1>
-          <div className='recipes-container' flexGrow={1} >
-             <Grid container spacing={3} textAlign='center'>
-              <Grid item xs={12}>
-              </Grid>
-                <Divider />
-   
-                    {this.renderRecipes()}
-
-            </Grid>
-          </div>
+            <h1 className='recipes-h1' >Recipes</h1>
+              <div className='recipes-container' flexGrow={1} >
+                <Grid container spacing={3} textAlign='center'>
+                    <Divider />
+                      {this.renderRecipes()}
+                        <Grid item xs={12}>
+                          <CreateComment />
+                        </Grid>
+                </Grid>
+              </div>
           </>
-
         )
     }
 }

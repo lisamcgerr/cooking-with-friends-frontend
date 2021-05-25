@@ -4,6 +4,8 @@ import { Card, Image, Icon, Header, Button } from 'semantic-ui-react'
 import { updateLikes, loadRecipes } from '../actions/index'
 import RecipeCommentCard from './RecipeCommentCard'
 import Grid from '@material-ui/core/Grid'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -53,7 +55,7 @@ handleToggleComments = () => {
 
 handleCreateComment = (e) => {
     e.preventDefault()
-    this.props.history.push('/createcomment')
+    return <Link to='/createcomment'></Link>
 }
 
 
@@ -88,7 +90,7 @@ handleCreateComment = (e) => {
                         <Button textAlign='center' onClick={this.handleToggleComments} >Display Comments</Button>
                         <br></br>
                         <br></br>
-                        <Button textAlign='center' onClick={this.handleCreateComment} >Leave Comment</Button>
+                        {/* <Button textAlign='center' onClick={this.handleCreateComment} >Leave Comment</Button> */}
 
                     </Header>
                         {this.state.showComments ? this.renderComments() : null}

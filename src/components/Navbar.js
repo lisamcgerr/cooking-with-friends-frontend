@@ -15,12 +15,6 @@ class Navbar extends React.Component {
         return(
           
                 <Menu inverted className='navbar' secondary >
-                   
-                    {/* <Link to="/">
-                        <Menu.Item
-                        
-                        name='Home'/>
-                    </Link> */}
 
                     <Link to="/recipes">
                         <Menu.Item

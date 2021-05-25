@@ -5,8 +5,6 @@ import { Grid, Form, Button, Segment } from 'semantic-ui-react'
 
 class CreateComment extends React.Component {
 
-
-    //grab the id of the recipe off the button -- check class names
     state = {
         post: '',
         user_id: '',
@@ -15,13 +13,17 @@ class CreateComment extends React.Component {
 
     handleInput = (e) => {
         this.setState({
-            [e.target.post]: e.target.value,
-            user_id: this.props.auth.id,
-            recipe_id: this.props.recipe.id
+            post: e.target.value,
+            user_id: this.props.auth.id
         })
     }
 
-    //fetch request tolocalhost3001/comments
+    handleChangeRecipe = (e) => {
+        this.setState({
+            recipe_id: e.target.value
+        })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
 
@@ -53,18 +55,23 @@ class CreateComment extends React.Component {
                 <br></br>
                 <Grid  textAlign='center' style={{ height: '100vh' }} verticalAlign='top'>
                 <Grid.Column style={{ maxWidth: 550 }}>
-                <h1 className='login-h1'>Comment on a Recipe</h1>
+                <h1 className='login-h1'>Leave a Review</h1>
                     <Form onSubmit={this.handleSubmit} inverted sixe='large'>
                     <Segment inverted stacked>
                         <Form.Input fluid 
-                        icon = ''
-                        iconPosition='left'
                         name='post'
                         type='text'
                         value={this.state.post}
                         onChange={this.handleInput}
-                        placeholder='leave comment here'
+                        placeholder='leave review here'
                         />
+                        <Form.Input>
+                        <select name='recipe_id' value={this.state.recipe_id} onChange={this.handleChangeRecipe}>
+                            {this.props.recipes.map((recipe) => {
+                             return <option value={recipe.id}>{recipe.name}</option>;
+                             })}
+                        </select>
+                    </Form.Input>
                     </Segment> 
                     </Form>
                     <Button color='green' fluid size='large'>Submit</Button>
@@ -77,7 +84,8 @@ class CreateComment extends React.Component {
 
 function mapStateToProps(state){
     return{
-        auth: state.auth
+        auth: state.auth,
+        recipes: state.recipes
     }
 }
 
